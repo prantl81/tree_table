@@ -14,13 +14,13 @@
         <script id="oView" name="oView" type="sapui5/xmlview">
           <mvc:View
               xmlns:mvc="sap.ui.core.mvc"
-              xmlns="sap.ui.table"
+              xmlns="sap.ui.table.TreeTable"
               xmlns:c="sap.ui.core"
               xmlns:m="sap.m"
               xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
               <m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
                   <m:content>
-                      <Table id="oTable" rows="{/TableData}" selectionMode="Single" selectionBehavior="RowOnly" visibleRowCount="15" sort="sortProductId" ariaLabelledBy="title" expandFirstLevel="true">
+                      <Table id="oTable" rows="{/TableData}" selectionMode="Single" selectionBehavior="RowOnly" visibleRowCount="15" sort="sortProductId" ariaLabelledBy="title" >
                           <extension>
                               <m:OverflowToolbar style="Clear">
                                   <m:Title id="title" text="Table Data" />
