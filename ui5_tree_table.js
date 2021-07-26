@@ -459,7 +459,17 @@
                                                             { "Name": "MPL YZ", "TableData" : [
                                                               { Name: 'MPL 3'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
                                                               { Name: 'MPL 4'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
+                                                            ]}
+                                                          ]},
+                                                          { "Name": "SPL 2", "TableData" : [
+                                                            { "Name": "MPL RS", "TableData" : [
+                                                              { Name: 'MPL 5'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
+                                                              { Name: 'MPL 6'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
                                                             ]},
+                                                            { "Name": "MPL TV", "TableData" : [
+                                                              { Name: 'MPL 7'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
+                                                              { Name: 'MPL 8'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
+                                                            ]}
                                                           ]}
                                                         ]};
 
