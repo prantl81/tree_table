@@ -409,7 +409,7 @@
 
     // ----------------END class Ui5CustTable extends HTMLElement----------------
 
-    customElements.define("tp.sac.tree.table.ui5", Ui5TreeTable);
+    customElements.define("tp-sac-tree-table-ui5", Ui5TreeTable);
 
     // ---------------- UTILS -------------------------------------------------
     function loadthis(that) {
