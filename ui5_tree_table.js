@@ -40,7 +40,7 @@
                           <Column  hAlign="Center">
                               <m:Label text="SPL" />
                               <template>
-                                  <m:CheckBox selected="{spl_flag}" enabled="true" visible="{= !!${spl_flag}}"/>
+                                  <m:CheckBox selected="{spl_flag}" enabled="true" visible="{= !!$"{spl_flag}"}"/>
                               </template>
                           </Column>
                        </columns>
