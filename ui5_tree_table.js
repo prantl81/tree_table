@@ -24,6 +24,8 @@
                           <extension>
                               <m:OverflowToolbar style="Clear">
                                   <m:Title id="title" text="Table Data" />
+                                  <m:Button text="Collapse all" press="onCollapseAll"/>
+						                      <m:Button text="Expand first level" press="onExpandFirstLevel"/>
                               </m:OverflowToolbar>
                           </extension>
                           <columns>
@@ -458,6 +460,11 @@
                                                            { Name: 'MPL 5'      ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' },
                                                            { Name: 'MPL 6',  ProductId : 'RB1236 ', Quantity: 3000, DeliveryDate: '21.03.2020' }
                                                            ]}
+                                                         { "name": "SPL 3", "TableData" : [
+                                                           { Name: 'MPL 7'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
+                                                           { Name: 'MPL 8'      ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' },
+                                                           { Name: 'MPL 9',  ProductId : 'RB1236 ', Quantity: 3000, DeliveryDate: '21.03.2020' }
+                                                           ]}
                                                         ]};
 
 
@@ -507,9 +514,16 @@
                                    			//MessageToast.show("Details for product with id");
                                         let buttonContext = oEvent.getSource().getBindingContext().getObject();
                                         that.dispatchEvent(new CustomEvent("VersionDeletePressed", { detail: { buttonContext } } ));
-                                   }
+                                   },
+                                   onCollapseAll: function() {
+			                                  var oTreeTable = this.byId("oTable");
+			                                  oTreeTable.collapseAll();
+		                               },
 
-
+		                               onExpandFirstLevel: function() {
+			                                  var oTreeTable = this.byId("oTable");
+			                                  oTreeTable.expandToLevel(1);
+		                               }
                                });
                            });
 
