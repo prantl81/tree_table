@@ -12,7 +12,7 @@
 	  "webcomponents": [
     {
       "kind": "main",
-      "tag": "tp-sac-selectiontable-ui5",
+      "tag": "tp-sac-tree-table-ui5",
       "url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table.js",
       "integrity": "",
       "ignoreIntegrity": true
