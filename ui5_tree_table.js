@@ -32,16 +32,16 @@
                        </dragDropConfig>
                        <columns>
                           <Column width="13rem">
-                             <m:Label text="spl" />
+                             <m:Label text="Customer" />
                              <template>
                                 <m:Text text="{name}" wrapping="false" />
                              </template>
                           </Column>
-                          <Column width="9rem">
-                             <m:Label text="Price" />
-                             <template>
-                                <u:Currency value="{amount}" />
-                             </template>
+                          <Column  hAlign="Center">
+                              <m:Label text="SPL" />
+                              <template>
+                                  <m:CheckBox selected="{ path: {spl_flag}'Heavy', type: 'sap.ui.model.type.String' }" />
+                              </template>
                           </Column>
                        </columns>
                     </TreeTable>
@@ -423,44 +423,44 @@
                                              { "spl": [
                                                      {"name":"Channel 1", "spl": [
                                                        {"name": "LH4 - Customer 1", "spl": [
-                                                         {"name": "MPL 1", "amount": 16.99, "currency": "EUR", "size": "S"},
-                                                         {"name": "MPL 2", "amount": 47.99, "currency": "EUR", "size": "M"},
-                                                         {"name": "MPL 3", "amount": 103.99, "currency": "USD", "size": "L"}
+                                                         {"name": "MPL 1", "spl_flag": "X", },
+                                                         {"name": "MPL 2", "spl_flag": "", },
+                                                         {"name": "MPL 3", "spl_flag": "X", }
                                                        ]},
                                                        {"name": "LH4 - Customer 2", "spl": [
-                                                         {"name": "MPL 4", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                         {"name": "MPL 5", "amount": 14.99, "currency": "USD", "size": "S"}
+                                                         {"name": "MPL 4", "spl_flag": "", },
+                                                         {"name": "MPL 5", "spl_flag": "X", }
                                                        ]},
                                                        {"name": "LH4 - Customer 3", "spl": [
-                                                         {"name": "MPL 6", "amount": 32.99, "currency": "USD", "size": "M"},
-                                                         {"name": "MPL 7", "amount": 44.99, "currency": "USD", "size": "S"},
-                                                         {"name": "MPL 8", "amount": 99.99, "currency": "USD", "size": "XS"},
-                                                         {"name": "MPL 9", "amount": 56.99, "currency": "USD", "size": "L"}
+                                                         {"name": "MPL 6", "spl_flag": "X", },
+                                                         {"name": "MPL 7", "spl_flag": "X", },
+                                                         {"name": "MPL 8", "spl_flag": "X", },
+                                                         {"name": "MPL 9", "spl_flag": "X", }
                                                        ]},
                                                        {"name": "LH4 - Customer 4", "spl": [
-                                                         {"name": "MPL 10", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                         {"name": "MPL 11", "amount": 44.99, "currency": "USD", "size": "S"}
+                                                         {"name": "MPL 10", "spl_flag": "X", },
+                                                         {"name": "MPL 11", "spl_flag": "X", }
                                                        ]}
                                                      ]},
                                                      {"name":"Channel 2", "spl": [
                                                        {"name": "LH4 - Customer 5", "spl": [
-                                                         {"name": "MPL 12", "amount": 16.99, "currency": "EUR", "size": "S"},
-                                                         {"name": "MPL 13", "amount": 47.99, "currency": "EUR", "size": "M"},
-                                                         {"name": "MPL 14", "amount": 103.99, "currency": "USD", "size": "L"}
+                                                         {"name": "MPL 12", "spl_flag": "X", },
+                                                         {"name": "MPL 13", "spl_flag": "X", },
+                                                         {"name": "MPL 14", "spl_flag": "X", }
                                                        ]},
                                                        {"name": "LH4 - Customer 6", "spl": [
-                                                         {"name": "MPL 15", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                         {"name": "MPL 16", "amount": 14.99, "currency": "USD", "size": "S"}
+                                                         {"name": "MPL 15", "spl_flag": "X", },
+                                                         {"name": "MPL 16", "spl_flag": "X", }
                                                        ]},
                                                        {"name": "LH4 - Customer 7", "spl": [
-                                                         {"name": "MPL 17", "amount": 32.99, "currency": "USD", "size": "M"},
-                                                         {"name": "MPL 18", "amount": 44.99, "currency": "USD", "size": "S"},
-                                                         {"name": "MPL 19", "amount": 99.99, "currency": "USD", "size": "XS"},
-                                                         {"name": "MPL 20", "amount": 56.99, "currency": "USD", "size": "L"}
+                                                         {"name": "MPL 17", "spl_flag": "X", },
+                                                         {"name": "MPL 18", "spl_flag": "X", },
+                                                         {"name": "MPL 19", "spl_flag": "X", },
+                                                         {"name": "MPL 20", "spl_flag": "X", }
                                                        ]},
                                                        {"name": "LH4 - Customer 8", "spl": [
-                                                         {"name": "MPL 21", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                         {"name": "MPL 22", "amount": 44.99, "currency": "USD", "size": "S"}
+                                                         {"name": "MPL 21", "spl_flag": "X", },
+                                                         {"name": "MPL 22", "spl_flag": "X", }
                                                        ]}
                                                      ]}
                                            ]};
