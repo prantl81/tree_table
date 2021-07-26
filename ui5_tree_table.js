@@ -13,39 +13,70 @@
         </div>
         <script id="oView" name="oView" type="sapui5/xmlview">
           <mvc:View
-              xmlns:mvc="sap.ui.core.mvc"
+              controllerName="myView.Template"
               xmlns="sap.ui.table"
-              xmlns:c="sap.ui.core"
-              xmlns:m="sap.m"
-              xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
-              <m:Page showHeader="false" enableScrolling="false" class="sapUiContentPadding">
-                  <m:content>
-
-                      <Table id="oTable" rows="{path:'/catalog/clothing', parameters: {arrayNames:['categories']}}" selectionMode="Single" selectionBehavior="RowOnly" visibleRowCount="15" sort="sortProductId" ariaLabelledBy="title" >
-                          <extension>
-                              <m:OverflowToolbar style="Clear">
-                                  <m:Title id="title" text="Table Data" />
-                                  <m:Button text="Collapse all" press="onCollapseAll"/>
-						                      <m:Button text="Expand first level" press="onExpandFirstLevel"/>
-                              </m:OverflowToolbar>
-                          </extension>
-                          <columns>
-                              <Column sortProperty="Name" filterProperty="Name">
-                                  <m:Label text="Categories" />
-                                  <template>
-                                      <m:Text text="{name}" wrapping="false" />
-                                  </template>
-                              </Column>
-                              <Column  sortProperty="Price" hAlign="End">
-                                  <m:Label text="Price" />
-                                  <template>
-                                      <m:Label text="{amount}" />
-                                  </template>
-                              </Column>
-                          </columns>
-                      </Table>
-                  </m:content>
-              </m:Page>
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:m="sap.m"
+  xmlns:u="sap.ui.unified"
+  xmlns:core="sap.ui.core"
+  xmlns:dnd="sap.ui.core.dnd"
+  height="100%">
+<m:Page
+    showHeader="false"
+    enableScrolling="false">
+  <m:content>
+    <TreeTable
+        id="TreeTable"
+        rows="{path:'/catalog/clothing', parameters: {arrayNames:['categories']}}"
+        selectionMode="MultiToggle"
+        enableSelectAll="false"
+        ariaLabelledBy="title">
+      <extension>
+        <m:OverflowToolbar style="Clear">
+          <m:Title id="title" text="Clothing"/>
+          <m:Button id="cut" text="Cut" icon="sap-icon://scissors" press="onCut"/>
+          <m:Button id="paste" text="Paste" icon="sap-icon://paste" press="onPaste" enabled="false"/>
+          <m:ToolbarSpacer/>
+          <m:Button text="Collapse all" press="onCollapseAll"/>
+          <m:Button text="Expand first level" press="onExpandFirstLevel"/>
+        </m:OverflowToolbar>
+      </extension>
+      <dragDropConfig>
+        <dnd:DragDropInfo
+            sourceAggregation="rows"
+            targetAggregation="rows"
+            dragStart="onDragStart"
+            drop="onDrop"/>
+      </dragDropConfig>
+      <columns>
+        <Column width="13rem">
+          <m:Label text="Categories"/>
+          <template>
+            <m:Text text="{name}" wrapping="false"/>
+          </template>
+        </Column>
+        <Column width="9rem">
+          <m:Label text="Price"/>
+          <template>
+            <u:Currency value="{amount}" currency="{currency}"/>
+          </template>
+        </Column>
+        <Column>
+          <m:Label text="Size"/>
+          <template>
+            <m:Select
+                items="{path: '/sizes', templateShareable: true}"
+                selectedKey="{size}"
+                visible="{= !!${size}}"
+                forceSelection="false">
+              <core:Item key="{key}" text="{value}"/>
+            </m:Select>
+          </template>
+        </Column>
+      </columns>
+    </TreeTable>
+  </m:content>
+</m:Page>
           </mvc:View>
         </script>
     `;
