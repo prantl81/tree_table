@@ -447,19 +447,19 @@
                                          that._firstConnection = 1;
                                      } else {
 
-                                           var oData = {
-                                                          { "name": "SPL 1", TableData : [
+                                           var oData = { "TableData": [
+                                                          { "name": "SPL 1", "TableData" : [
                                                             { Name: 'MPL 1'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
                                                             { Name: 'MPL 2'      ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' },
                                                             { Name: 'MPL 3',  ProductId : 'RB1236 ', Quantity: 3000, DeliveryDate: '21.03.2020' }
                                                            ]},
-                                                         { "name": "SPL 2", TableData : [
+                                                         { "name": "SPL 2", "TableData" : [
                                                            { Name: 'MPL 4'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
                                                            { Name: 'MPL 5'      ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' },
                                                            { Name: 'MPL 6',  ProductId : 'RB1236 ', Quantity: 3000, DeliveryDate: '21.03.2020' }
                                                            ]}
-                                                        };
-                                           
+                                                        ]};
+
 
                                            var oModel = new JSONModel(oData);
                                            this.getView().setModel(oModel);
