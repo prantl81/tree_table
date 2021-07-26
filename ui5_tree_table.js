@@ -61,18 +61,6 @@
             <u:Currency value="{amount}" currency="{currency}"/>
           </template>
         </Column>
-        <Column>
-          <m:Label text="Size"/>
-          <template>
-            <m:Select
-                items="{path: '/sizes', templateShareable: true}"
-                selectedKey="{size}"
-                visible="{= !!${size}}"
-                forceSelection="false">
-              <core:Item key="{key}" text="{value}"/>
-            </m:Select>
-          </template>
-        </Column>
       </columns>
     </TreeTable>
   </m:content>
