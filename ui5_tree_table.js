@@ -530,7 +530,7 @@
                                                            ]}
                                                          ]}
                                                        ]}
-                                           };
+                                           ]};
 
 
                                            var oModel = new JSONModel(oData);
