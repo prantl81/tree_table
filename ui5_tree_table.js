@@ -40,7 +40,7 @@
                           <Column  hAlign="Center">
                               <m:Label text="SPL" />
                               <template>
-                                  <m:CheckBox selected="{ path: 'spl_flag , type: 'sap.ui.model.type.String' }" />
+                                  <m:CheckBox selected="{ path: {spl_flag} , type: 'sap.ui.model.type.String' }" />
                               </template>
                           </Column>
                        </columns>
