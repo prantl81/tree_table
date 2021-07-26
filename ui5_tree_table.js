@@ -78,7 +78,7 @@
 
 
 // ------------------------------------------------------------------
-    class Ui5CustTable extends HTMLElement {
+    class Ui5TreeTable extends HTMLElement {
 
         constructor() {
             super();
@@ -199,7 +199,7 @@
           onCustomWidgetAfterUpdate(changedProperties) {
 
               loadthis(this);
-            
+
               if ("rowDetails" in changedProperties) {
                 this.rowDetails = changedProperties["rowDetails"];
               }
@@ -409,7 +409,7 @@
 
     // ----------------END class Ui5CustTable extends HTMLElement----------------
 
-    customElements.define("tp.sac.tree.table.ui5", Ui5CustTable);
+    customElements.define("tp.sac.tree.table.ui5", Ui5TreeTable);
 
     // ---------------- UTILS -------------------------------------------------
     function loadthis(that) {
