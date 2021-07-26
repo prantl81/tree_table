@@ -16,7 +16,7 @@
            <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
               <m:Page showHeader="false" enableScrolling="false">
                  <m:content>
-                    <TreeTable id="TreeTable" rows="{path:'/catalog/clothing', parameters: {arrayNames:['categories']}}" selectionMode="MultiToggle" enableSelectAll="false" ariaLabelledBy="title">
+                    <TreeTable id="TreeTable" rows="{path:'/', parameters: {arrayNames:['categories']}}" selectionMode="MultiToggle" enableSelectAll="false" ariaLabelledBy="title">
                        <extension>
                           <m:OverflowToolbar style="Clear">
                              <m:Title id="title" text="Clothing" />
@@ -420,10 +420,7 @@
                                      } else {
 
                                            var oData =
-                                             {
-                                             "catalog": {
-                                               "clothing": {
-                                                 "categories": [
+                                             { "categories": [
                                                    {"name": "Women", "categories": [
                                                      {"name":"Clothing", "categories": [
                                                        {"name": "Dresses", "categories": [
@@ -531,27 +528,8 @@
                                                              {"name": "Jeans Short", "amount": 99.99, "currency": "USD", "size": "XS"},
                                                              {"name": "Black Short", "amount": 56.99, "currency": "USD", "size": "L"}
                                                            ]}
-                                                         ]},
-                                                         {"name":"Accessories", "categories": [
-                                                           {"name": "Sunglasses", "amount": 36.99, "currency": "USD"},
-                                                           {"name": "Beanie", "amount": 17.99, "currency": "USD"},
-                                                           {"name": "Scarf", "amount": 15.99, "currency": "USD"}
-                                                         ]},
-                                                         {"name":"Shoes", "categories": [
-                                                           {"name": "Sneaker", "amount": 89.99, "currency": "USD"},
-                                                           {"name": "Sport Shoe", "amount": 47.99, "currency": "USD"},
-                                                           {"name": "Boots", "amount": 103.99, "currency": "USD"}
                                                          ]}
                                                        ]}
-                                                   ]}
-
-                                               },
-                                             "sizes": [
-                                               {"key": "XS", "value": "Extra Small"},
-                                               {"key": "S", "value": "Small"},
-                                               {"key": "M", "value": "Medium"},
-                                               {"key": "L", "value": "Large"}
-                                             ]
                                            };
 
 
