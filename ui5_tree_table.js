@@ -453,12 +453,12 @@
                                            var oData = { "TableData": [
                                                           { "Name": "SPL 1", "TableData" : [
                                                             { "Name": "MPL XY", "TableData" : [
-                                                            { Name: 'MPL 1'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
-                                                            { Name: 'MPL 2'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
+                                                              { Name: 'MPL 1'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
+                                                              { Name: 'MPL 2'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
                                                             ]},
                                                             { "Name": "MPL YZ", "TableData" : [
-                                                            { Name: 'MPL 3'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
-                                                            { Name: 'MPL 4'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
+                                                              { Name: 'MPL 3'  ,  ProductId : 'RB1234 ', Quantity: 1000, DeliveryDate: '18.03.2021' },
+                                                              { Name: 'MPL 4'  ,  ProductId : 'RB1235 ', Quantity: 2000, DeliveryDate: '20.12.2020' }
                                                             ]},
                                                           ]}
                                                         ]};
