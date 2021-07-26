@@ -14,7 +14,7 @@
         <script id="oView" name="oView" type="sapui5/xmlview">
           <mvc:View
               xmlns:mvc="sap.ui.core.mvc"
-              xmlns="sap.ui.table.TreeTable"
+              xmlns="sap.ui.table"
               xmlns:c="sap.ui.core"
               xmlns:m="sap.m"
               xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
