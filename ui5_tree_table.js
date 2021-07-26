@@ -70,10 +70,10 @@
 
             this.addEventListener("click", event => {
                  console.log('click');
-                 let  oTable = window.globVar_UI5_Table
-                 let oSelectionIndex =  oTable.getSelectedIndex();
+                 let  TreeTable = window.globVar_UI5_Table
+                 let oSelectionIndex =  TreeTable.getSelectedIndex();
                  if ( oSelectionIndex > -1 ){
-             					let context = oTable.getContextByIndex(oSelectionIndex);
+             					let context = TreeTable.getContextByIndex(oSelectionIndex);
              					let value = context.getProperty("ProductId");
 
              					this.dispatchEvent(new Event("onSelectionChange", {
@@ -305,8 +305,8 @@
             DeliveryDate : arrayMembers[3]
           }
 
-          let  oTable = window.globVar_UI5_Table;
-          let oModel = oTable.getModel();
+          let  TreeTable = window.globVar_UI5_Table;
+          let oModel = TreeTable.getModel();
           let oData = oModel.getData();
           oData.TableData.push(assosciated_array);
           oModel.refresh();
@@ -316,17 +316,17 @@
         deleteRow(RowToDelete){
 
           //alternativly -> get selected row
-          let  oTable = window.globVar_UI5_Table
+          let  TreeTable = window.globVar_UI5_Table
 
           //check if a row is selected
-          let oSelectionIndex =  oTable.getSelectedIndex();
+          let oSelectionIndex =  TreeTable.getSelectedIndex();
           if ( oSelectionIndex > -1 ){
-              var oContext = oTable.getContextByIndex(oTable.getSelectedIndex());
+              var oContext = TreeTable.getContextByIndex(TreeTable.getSelectedIndex());
               var sPath = oContext.getPath();
               var oSelRow = oContext.getProperty(sPath);
 
 
-              let oModel = oTable.getModel();
+              let oModel = TreeTable.getModel();
               let oData = oModel.getData();
 
               //Delete record from table
@@ -346,14 +346,14 @@
 
         getSelectedRow(){
               let returnValue = "";
-              let  oTable = window.globVar_UI5_Table
+              let  TreeTable = window.globVar_UI5_Table
 
               //check if a row is selected
-              let oSelectionIndex =  oTable.getSelectedIndex();
+              let oSelectionIndex =  TreeTable.getSelectedIndex();
               if ( oSelectionIndex > -1 ){
 
 
-                var oContext = oTable.getContextByIndex(oSelectionIndex);
+                var oContext = TreeTable.getContextByIndex(oSelectionIndex);
 
                 var sPath = oContext.getPath();
                 var oSelRow = oContext.getProperty(sPath);
@@ -563,7 +563,7 @@
                                    },
 
                                    onBeforeRendering: function() {
-                                         window.globVar_UI5_Table = this.byId('oTable');
+                                         window.globVar_UI5_Table = this.byId('TreeTable');
                                    },
 
 
@@ -593,12 +593,12 @@
                                         that.dispatchEvent(new CustomEvent("VersionDeletePressed", { detail: { buttonContext } } ));
                                    },
                                    onCollapseAll: function() {
-			                                  var oTreeTable = this.byId("oTable");
+			                                  var oTreeTable = this.byId("TreeTable");
 			                                  oTreeTable.collapseAll();
 		                               },
 
 		                               onExpandFirstLevel: function() {
-			                                  var oTreeTable = this.byId("oTable");
+			                                  var oTreeTable = this.byId("TreeTable");
 			                                  oTreeTable.expandToLevel(1);
 		                               }
                                });
