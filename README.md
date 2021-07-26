@@ -1,1 +1,1 @@
-# ui5_selection_table
+# ui5_tree_table
