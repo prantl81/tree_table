@@ -431,21 +431,16 @@
             //### Controller ###
             sap.ui.define([
                 "sap/base/Log",
-            		"sap/ui/core/mvc/Controller",   //define as we can't require the MVC controller
+                "sap/ui/core/mvc/Controller",   //define as we can't require the MVC controller
                 "sap/ui/model/Sorter",
-            		"sap/ui/model/json/JSONModel",
-            		"sap/m/MessageToast",
-            		"sap/ui/core/format/DateFormat",
+                "sap/ui/model/json/JSONModel",
+                "sap/m/MessageToast",
+                "sap/ui/core/format/DateFormat",
                 "sap/m/ToolbarSpacer",
                 "sap/ui/table/library",
-                "sap/ui/thirdparty/jquery",
-                "sap/ui/core/UIComponent"
-             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, UIComponent) {
+                "sap/ui/thirdparty/jquery"
+             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery) {
                 "use strict";
-
-                // shortcut for sap.ui.table.SortOrder
-	              var SortOrder = library.SortOrder;
-
 
                 return Controller.extend("myView.Template", {
                                    onInit: function() {
@@ -593,25 +588,15 @@
                                            var oModel = new JSONModel(oData);
                                            this.getView().setModel(oModel);
 
-                                           //this.jModel = new sap.ui.model.json.JSONModel();
-                                           //this.jModel.setData(this._data);
                                       }
 
                                    },
 
                                    onBeforeRendering: function() {
-                                  //   this.byId('oTable').setModel(this.jModel);
-                                     window.globVar_UI5_Table = this.byId('oTable');
+                                         window.globVar_UI5_Table = this.byId('oTable');
                                    },
 
-                                   sortProductId: function(oEvent) {
-                                    // let oTable = window.globVar_UI5_Table;
-                                    // let oView = this.byId('myView.Template');
-                                    // let oProdIdCol = oView.byId("ProductId");
-                                    // oTable.sort(oProdIdCol, this._bSortColumnDescending ? SortOrder.Descending : SortOrder.Ascending, /*extend existing sorting*/true)
-                                    // this._bSortColumnDescending = !this._bSortColumnDescending;
-                                    console.log("sortProductId called");
-                                   },
+
                                    onButtonPress: function(oEvent) {
                                        // _password = oView.byId("passwordInput").getValue();
                                        that._firePropertiesChanged();
