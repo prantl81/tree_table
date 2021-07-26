@@ -421,8 +421,8 @@
 
                                            var oData =
                                              { "spl": [
-                                                     {"name":"LH4 - Customer 1", "spl": [
-                                                       {"name": "Dresses", "spl": [
+                                                     {"name":"Channel 1", "spl": [
+                                                       {"name": "LH4 - Customer 1", "spl": [
                                                          {"name": "MPL 1", "amount": 16.99, "currency": "EUR", "size": "S"},
                                                          {"name": "MPL 2", "amount": 47.99, "currency": "EUR", "size": "M"},
                                                          {"name": "MPL 3", "amount": 103.99, "currency": "USD", "size": "L"}
@@ -439,9 +439,30 @@
                                                        ]},
                                                        {"name": "LH4 - Customer 4", "spl": [
                                                          {"name": "MPL 10", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                         {"name": ";PL 11", "amount": 44.99, "currency": "USD", "size": "S"}
+                                                         {"name": "MPL 11", "amount": 44.99, "currency": "USD", "size": "S"}
                                                        ]}
                                                      ]},
+                                                     {"name":"Channel 2", "spl": [
+                                                       {"name": "LH4 - Customer 5", "spl": [
+                                                         {"name": "MPL 12", "amount": 16.99, "currency": "EUR", "size": "S"},
+                                                         {"name": "MPL 13", "amount": 47.99, "currency": "EUR", "size": "M"},
+                                                         {"name": "MPL 14", "amount": 103.99, "currency": "USD", "size": "L"}
+                                                       ]},
+                                                       {"name": "LH4 - Customer 6", "spl": [
+                                                         {"name": "MPL 15", "amount": 24.99, "currency": "USD", "size": "M"},
+                                                         {"name": "MPL 16", "amount": 14.99, "currency": "USD", "size": "S"}
+                                                       ]},
+                                                       {"name": "LH4 - Customer 7", "spl": [
+                                                         {"name": "MPL 17", "amount": 32.99, "currency": "USD", "size": "M"},
+                                                         {"name": "MPL 18", "amount": 44.99, "currency": "USD", "size": "S"},
+                                                         {"name": "MPL 19", "amount": 99.99, "currency": "USD", "size": "XS"},
+                                                         {"name": "MPL 20", "amount": 56.99, "currency": "USD", "size": "L"}
+                                                       ]},
+                                                       {"name": "LH4 - Customer 8", "spl": [
+                                                         {"name": "MPL 21", "amount": 24.99, "currency": "USD", "size": "M"},
+                                                         {"name": "MPL 22", "amount": 44.99, "currency": "USD", "size": "S"}
+                                                       ]}
+                                                     ]}
                                            ]};
 
 
