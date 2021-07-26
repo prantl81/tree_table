@@ -5,7 +5,7 @@
     let _password;
 
     let tmpl = document.createElement("template");
-    tmpl.innerHTML = '
+    tmpl.innerHTML = `
         <style>
         </style>
         <div id="ui5_content" name="ui5_content">
@@ -49,7 +49,7 @@
               </m:Page>
            </mvc:View>
         </script>
-    ';
+    `;
 
 
 
