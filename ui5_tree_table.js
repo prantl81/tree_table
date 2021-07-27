@@ -396,7 +396,7 @@
             "use strict";
 
             //### Controller ###
-            sap.ui.define([
+            sap.ui.require([
                 "sap/base/Log",
                 "sap/ui/core/mvc/Controller",   //define as we can't require the MVC controller
                 "sap/ui/model/Sorter",
@@ -411,6 +411,8 @@
                 "sap/ui/model/FilterType"
              ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, Filter, FilterOperator, FilterType) {
                 "use strict";
+
+                debugger;
 
                 return Controller.extend("myView.Template", {
                                    onInit: function() {
