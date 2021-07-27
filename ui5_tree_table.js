@@ -479,7 +479,7 @@
 			                                  var oView = this.getView(),
 				                                sValue = oView.byId("searchField").getValue(),
 				                                oFilter = new Filter("name", FilterOperator.Contains, sValue);
-			                                  oView.byId("spl").getBinding("items").filter(oFilter, FilterType.Application);
+			                                  oView.byId("TreeTable").getBinding("items").filter(oFilter, FilterType.Application);
 		                                    },
 
 
