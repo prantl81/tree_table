@@ -19,7 +19,7 @@
                    <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="25" enableSelectAll="false" ariaLabelledBy="title">
                        <extension>
                           <m:OverflowToolbar style="Clear">
-                             <m:SearchField id="searchField" width="30%" placeholder="{i18n>searchFieldPlaceholder}" search=".onSearch"/>
+                             <m:SearchField id="searchField" width="30%" placeholder="Search for MPL/LH4/Channel" search=".onSearch" suggest=".onSuggest" suggestionItems="{path: '/spl'}"/>
                              <m:ToolbarSpacer />
                              <m:Button text="Collapse all" press="onCollapseAll" />
                              <m:Button text="Expand first level" press="onExpandFirstLevel" />
@@ -482,6 +482,26 @@
 			                                  oView.byId("TreeTable").getBinding("rows").filter(oFilter, FilterType.Application);
                                         oView.byId("TreeTable").getBinding("rows").expandToLevel(3);
 		                                    },
+                                  onSuggest: function(event) {
+
+                                          var sValue = event.getParameter("suggestValue"),
+      		                                  aFilters = [];
+                                            if (sValue) {
+      	                                       aFilters.push(new Filter({
+      	                                          filters: [
+      		                                            new Filter("rows", FilterOperator.Contains, sValue.toUpperCase()),
+      		                                                 ],
+      		                                              and: false
+      		                                    }));
+      		                                 }
+      		                                   var oSource = event.getSource();
+      		                                   var oBinding = oSource.getBinding('suggestionItems');
+      		                                   oBinding.filter(aFilters);
+      		                                   oBinding.attachEventOnce('dataReceived', function() {
+      		                                   oSource.suggest();
+      		                                   });
+
+      	                                    },
 
 
                                    onButtonPress: function(oEvent) {
