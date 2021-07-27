@@ -480,6 +480,7 @@
 				                                sValue = oView.byId("searchField").getValue(),
 				                                oFilter = new Filter("name", FilterOperator.Contains, sValue);
 			                                  oView.byId("TreeTable").getBinding("rows").filter(oFilter, FilterType.Application);
+                                        oView.byId("TreeTable").getBinding("rows").expandToLevel(3);
 		                                    },
 
 
