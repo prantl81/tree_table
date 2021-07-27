@@ -38,7 +38,7 @@
 					"type": "string",
 					"description": "String separated by |"},
 			 { "name" : "newRowData",
-							"type": "string",
+							"type": "Object<string>",
 							"description": "JSON String holding the data of the new record"}
 						]
 		},
