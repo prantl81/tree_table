@@ -20,6 +20,7 @@
                        <extension>
                           <m:OverflowToolbar style="Clear">
                              <m:Title id="title" text="SPL Maintenance" />
+                             <m: SearchField id="searchField" width="20%" placeholder="{i18n>searchFieldPlaceholder}" search=".onSearch"/>
                              <m:ToolbarSpacer />
                              <m:Button text="Collapse all" press="onCollapseAll" />
                              <m:Button text="Expand first level" press="onExpandFirstLevel" />
