@@ -36,7 +36,11 @@
 			"parameters":
 			[{ "name" : "NewRow",
 					"type": "string",
-					"description": "String separated by |"}]
+					"description": "String separated by |"},
+			 { "name" : "newRowData",
+							"type": "object<string>",
+							"description": "Object holding the data of the new record"}
+						]
 		},
 		"deleteRow": {
 			"description": "Delete a row from the table",

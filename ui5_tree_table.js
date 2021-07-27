@@ -292,7 +292,11 @@
 
           // ---------------   "custom" methods of the widget --------------------------------
 
-        addRow(NewRow){
+        addRow(NewRow, newRowData){
+debugger;
+var x1 = newRowData["a"];
+var x2 = newRowData.a;
+
           let arrayMembers = NewRow.split('|');
 
           let assosciated_array = {
