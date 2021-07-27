@@ -19,8 +19,7 @@
                     <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="25" enableSelectAll="false" ariaLabelledBy="title">
                        <extension>
                           <m:OverflowToolbar style="Clear">
-                             <m:Title id="title" text="SPL Maintenance" />
-                             <m:SearchField id="searchField" width="20%" placeholder="{i18n>searchFieldPlaceholder}" search=".onSearch"/>
+                             <m:SearchField id="searchField" width="30%" placeholder="{i18n>searchFieldPlaceholder}" search=".onSearch"/>
                              <m:ToolbarSpacer />
                              <m:Button text="Collapse all" press="onCollapseAll" />
                              <m:Button text="Expand first level" press="onExpandFirstLevel" />
@@ -404,8 +403,11 @@
                 "sap/ui/core/format/DateFormat",
                 "sap/m/ToolbarSpacer",
                 "sap/ui/table/library",
-                "sap/ui/thirdparty/jquery"
-             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery) {
+                "sap/ui/thirdparty/jquery",
+                "sap/ui/model/Filter",
+	              "sap/ui/model/FilterOperator",
+                "sap/ui/model/FilterType"
+             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, Filter, FilterOperator, FilterType) {
                 "use strict";
 
                 return Controller.extend("myView.Template", {
@@ -472,6 +474,13 @@
                                    onBeforeRendering: function() {
                                          window.globVar_UI5_Table = this.byId('TreeTable');
                                    },
+
+                                   onSearch : function () {
+			                                  var oView = this.getView(),
+				                                sValue = oView.byId("searchField").getValue(),
+				                                oFilter = new Filter("name", FilterOperator.Contains, sValue);
+			                                  oView.byId("spl").getBinding("items").filter(oFilter, FilterType.Application);
+		                                    },
 
 
                                    onButtonPress: function(oEvent) {
