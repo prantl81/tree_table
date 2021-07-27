@@ -414,7 +414,9 @@
 
                 debugger;
 
-                return Controller.extend("myView.Template", {
+
+                //Define and instantiate controller
+                var controller = Controller.extend("myView.Template", {
                                    onInit: function() {
 
                                      if (that._firstConnection === 0) {
@@ -543,14 +545,20 @@
 			                                  oTreeTable.expandToLevel(1);
 		                               }
                                });
-                           });
 
 
-            //### THE APP: place the XMLView somewhere into DOM ###
-            var oView  = sap.ui.xmlview({
-                viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+               //Instantiate and place the view
+               //### THE APP: place the XMLView somewhere into DOM ###
+               var oView  = sap.ui.xmlview({
+                   viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+               });
+               oView.placeAt(content);
+
+
+
             });
-            oView.placeAt(content);
+
+
 
 
             if (that_._designMode) {
