@@ -308,8 +308,9 @@
           let  TreeTable = window.globVar_UI5_Table;
           let oModel = TreeTable.getModel();
           let oData = oModel.getData();
-          oData.TableData.push(assosciated_array);
-          oModel.refresh();
+          let tableData = oData.TableData;
+          //tableData.push(assosciated_array);
+          //oModel.refresh();
         }
 
 
@@ -471,8 +472,8 @@
                                            ]};
                                         } else {
                                         // not design mode -> we do not pass example data
-                                        //   var oData = {};
-                                       var oData =  { "spl": [
+                                        var oData = { "spl": []};
+                                      /* var oData =  { "spl": [
                                                 {"name":"Channel 1", "spl": [
                                                     {"name": "LH4 - Customer 1", "spl": [
                                                       {"name": "MPL 1", "spl_flag": true },
@@ -515,7 +516,7 @@
                                                       {"name": "MPL 22", "spl_flag": true }
                                                     ]}
                                                 ]}
-                                      ]};
+                                      ]}; */
                                         }
 
 
