@@ -428,9 +428,7 @@ var x2 = newRowData.a;
                                      } else {
 
                                        if (that_._designMode) {
-                                           var oData = {};
-                                       } else {
-                                             oData =
+                                           var oData =
                                              { "spl": [
                                                      {"name":"Channel 1", "spl": [
                                                          {"name": "LH4 - Customer 1", "spl": [
@@ -475,8 +473,10 @@ var x2 = newRowData.a;
                                                          ]}
                                                      ]}
                                            ]};
-
-                                         }
+                                        } else {
+                                        // not design mode -> we do not pass example data  
+                                           var oData = {};
+                                        }
 
 
                                            var oModel = new JSONModel(oData);
