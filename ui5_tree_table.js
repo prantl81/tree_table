@@ -292,10 +292,9 @@
 
           // ---------------   "custom" methods of the widget --------------------------------
 
-        addRow(NewRow, newRowData){
-debugger;
-var x1 = newRowData["a"];
-var x2 = newRowData.a;
+        addRow(NewRow){
+          debugger;
+          var x2 = NewRow.a;
 
           let arrayMembers = NewRow.split('|');
 
@@ -474,7 +473,7 @@ var x2 = newRowData.a;
                                                      ]}
                                            ]};
                                         } else {
-                                        // not design mode -> we do not pass example data  
+                                        // not design mode -> we do not pass example data
                                            var oData = {};
                                         }
 
