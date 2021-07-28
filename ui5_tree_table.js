@@ -427,7 +427,10 @@ var x2 = newRowData.a;
                                          that._firstConnection = 1;
                                      } else {
 
-                                           var oData =
+                                       if (that_._designMode) {
+                                           var oData = {[]};
+                                       } else {
+                                             oData =
                                              { "spl": [
                                                      {"name":"Channel 1", "spl": [
                                                          {"name": "LH4 - Customer 1", "spl": [
@@ -473,6 +476,8 @@ var x2 = newRowData.a;
                                                      ]}
                                            ]};
 
+                                         }
+
 
                                            var oModel = new JSONModel(oData);
                                            this.getView().setModel(oModel);
@@ -492,7 +497,7 @@ var x2 = newRowData.a;
 			                                  oView.byId("TreeTable").getBinding("rows").filter(oFilter, FilterType.Application);
                                         oView.byId("TreeTable").getBinding("rows").expandToLevel(3);
 		                                    },
-                                  onSuggest: function(event) {
+                                   onSuggest: function(event) {
 
                                           var sValue = event.getParameter("suggestValue"),
       		                                  aFilters = [];
