@@ -428,7 +428,7 @@ var x2 = newRowData.a;
                                      } else {
 
                                        if (that_._designMode) {
-                                           var oData = {[]};
+                                           var oData = {};
                                        } else {
                                              oData =
                                              { "spl": [
