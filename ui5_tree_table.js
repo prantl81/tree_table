@@ -295,7 +295,7 @@
         addRow(NewRow){
           debugger;
           var x2 = NewRow.a;
-
+          /*
           let arrayMembers = NewRow.split('|');
 
           let assosciated_array = {
@@ -304,7 +304,7 @@
             Quantity  : arrayMembers[2],
             DeliveryDate : arrayMembers[3]
           }
-
+          */
           let  TreeTable = window.globVar_UI5_Table;
           let oModel = TreeTable.getModel();
           let oData = oModel.getData();
