@@ -472,7 +472,7 @@
                                         } else {
                                         // not design mode -> we do not pass example data
                                         //   var oData = {};
-                                        { "spl": [
+                                       var oData =  { "spl": [
                                                 {"name":"Channel 1", "spl": [
                                                     {"name": "LH4 - Customer 1", "spl": [
                                                       {"name": "MPL 1", "spl_flag": true },
