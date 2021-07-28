@@ -415,9 +415,6 @@
              ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, Filter, FilterOperator, FilterType) {
                 "use strict";
 
-                debugger;
-
-
                 //Define and instantiate controller
                 var controller = Controller.extend("myView.Template", {
                                    onInit: function() {
