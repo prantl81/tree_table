@@ -296,69 +296,62 @@
           debugger;
 
           //here we get the new fields from SAC -> all fields are filled
-          let x1 = NewRow.channel;   //-> Top Node, Channel
-          let x2 = NewRow.lh4;   //-> Second Level, LH4
-          let x3 = NewRow.mpl;   //-> MPL, details
-          let x4 = NewRow.spl;   //-> SPL flag (X = true/ "" = false)
+          var channelNewRow = NewRow.channel;   //-> Top Node, Channel
+          var lh4NewRow = NewRow.lh4;   //-> Second Level, LH4
+          var mplNewRow = NewRow.mpl;   //-> MPL, details
+          var splFlagNewRow = NewRow.spl;   //-> SPL flag (X = true/ "" = false)
 
           //Map SPL Flag X to true or empty to false
-          let x5 = true;
-          if ( x4 === "X" ) { x5 = true } else { x5 = false};
+          var splFlagBoolean = true;
+          if ( splFlagNewRow === "X" ) {
+             splFlagBoolean = true;
+          } else {
+             splFlagBoolean = false;
+          }
 
-          let  TreeTable = window.globVar_UI5_Table;
-          let oModel = TreeTable.getModel();
-          oModel.createElement
-          let oData = oModel.getData();
-          let tableData = oData.spl;
-
+          var TreeTable = window.globVar_UI5_Table;
+          var oModel = TreeTable.getModel();
+          var oData = oModel.getData();
+          var tableData = oData.spl;
 
           //First check highest level -> channel_index
-          let channel_index = tableData.findIndex(function (line) {
-            return line.name === "Channel 3";
+          var channel_index = tableData.findIndex(function (line) {
+            return line.name === channelNewRow;
           });
-          if ( channel_index !== -1) {
 
-            let channel_array = tableData[channel_index].spl;
-            let lh4_index = channel_array.findIndex(function (line) {
-              return line.name === "LH4 - Customer 5";
-            });
+          if ( channel_index !== -1) {
+            //channel already exists
+              var channel_array = tableData[channel_index].spl;
+              var lh4_index = channel_array.findIndex(function (line) {
+                return line.name === lh4NewRow;
+              });
 
               if ( lh4_index !== -1) {
-                let lh4_array = tableData[channel_index].spl[lh4_index].spl;
-                lh4_array.push({"name": "MPL 99", "spl_flag": true });
+                var lh4_array = tableData[channel_index].spl[lh4_index].spl;
+                var mpl_index = lh4_array.findIndex(function (line) {
+                  return line.name === mplNewRow;
+                });
+                if ( mpl_index !== -1) {
+                  //existing MPL -> only update flag
+                  var mpl_array = lh4_array.spl[mpl_index].spl_flag = splFlagBoolean;
+                } else {
+                  //new MPL push into existing LH4
+                  let mpl = {"name": mplNewRow, "spl_flag": splFlagBoolean };
+                  lh4_array.push(mpl);
+                }
+
+              } else {
+                // new LH4 node added to existing channel
+                let mpl = {"name": mplNewRow, "spl_flag": splFlagBoolean };
+                let lh4 = {"name": lh4NewRow, "spl": mpl};
+                channel_array.spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
-            let mpl = {"name": "MPL 98", "spl_flag": true };
-            let lh4 = {"name": "LH4 - Customer 99", "spl": []};
-            let channel = {"name":"Channel 3", "spl": []};
-            lh4.spl.push(mpl);
-            channel.spl.push(lh4);
+            let mpl = {"name": mplNewRow, "spl_flag": splFlagBoolean };
+            let lh4 = {"name": lh4NewRow, "spl": mpl};
+            let channel = {"name":"Channel 3", "spl": lh4};
             tableData.push(channel);
-          }
-
-
-          /*
-          {"name":"Channel 2", "spl": [
-            {"name": "LH4 - Customer 5", "spl": [
-                {"name": "MPL 12", "spl_flag": true }
-              ]}
-            ]}
-          */
-
-          //now we check if nodes are already in the dataReceived
-          let mpl_1 = tableData.findIndex(function (line) { return line.name === 'MPL 12'; });
-          let lh4_index_1 = tableData.indexOf("LH 4 - Customer 5");
-
-
-          //now we check if nodes are already in the dataReceived
-          let mpl_index = tableData.indexOf(x3);
-          let lh4_index = tableData.indexOf(x2);
-          //let channel_index = tableData.indexOf(x1);
-
-          /*let assosciated_array = {
-            name : x3,
-            spl_flag : x5
           }
 
 
