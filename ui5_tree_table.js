@@ -320,7 +320,7 @@
 
             let channel_array = tableData[channel_index].spl;
             let lh4_index = channel_array.findIndex(function (line) {
-              return line.name === 'LH 4 - Customer 5';
+              return line.name === "LH 4 - Customer 5";
             });
 
               if ( lh4_index !== -1) {
