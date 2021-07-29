@@ -470,46 +470,35 @@
                                        if (that_._designMode) {
                                            var oData =
                                              { "spl": [
-                                                     {"name":"Channel 1", "spl": [
-                                                         {"name": "LH4 - Customer 1", "spl": [
-                                                           {"name": "MPL 1", "spl_flag": true },
-                                                           {"name": "MPL 2", "spl_flag": false  },
-                                                           {"name": "MPL 3", "spl_flag": true }
+                                                     {"name":"Level One - 1", "spl": [
+                                                         {"name": "Level Two - 1", "spl": [
+                                                           {"name": "Level Three - 1", "spl_flag": "X "},
+                                                           {"name": "Level Three - 2", "spl_flag": ""  },
+                                                           {"name": "Level Three - 3", "spl_flag": "X" }
                                                          ]},
-                                                         {"name": "LH4 - Customer 2", "spl": [
-                                                           {"name": "MPL 4", "spl_flag": false  },
-                                                           {"name": "MPL 5", "spl_flag": true }
+                                                         {"name": "Level Two - 2", "spl": [
+                                                           {"name": "Level Three - 4", "spl_flag": ""  },
+                                                           {"name": "Level Three - 5", "spl_flag": "X" }
                                                          ]},
-                                                         {"name": "LH4 - Customer 3", "spl": [
-                                                           {"name": "MPL 6", "spl_flag": true },
-                                                           {"name": "MPL 7", "spl_flag": true },
-                                                           {"name": "MPL 8", "spl_flag": true },
-                                                           {"name": "MPL 9", "spl_flag": true }
+                                                         {"name": "Level Two - 3", "spl": [
+                                                           {"name": "Level Three - 6", "spl_flag": "X" },
+                                                           {"name": "Level Three - 7", "spl_flag": "X" },
+                                                           {"name": "Level Three - 8", "spl_flag": "" },
+                                                           {"name": "Level Three - 9", "spl_flag": "" }
                                                          ]},
-                                                         {"name": "LH4 - Customer 4", "spl": [
-                                                           {"name": "MPL 10", "spl_flag": true },
-                                                           {"name": "MPL 11", "spl_flag": true }
+                                                         {"name": "Level Two - 4", "spl": [
+                                                           {"name": "Level Three - 10", "spl_flag": "" },
+                                                           {"name": "Level Three - 11", "spl_flag": "" }
                                                          ]}
                                                      ]},
-                                                     {"name":"Channel 2", "spl": [
-                                                       {"name": "LH4 - Customer 5", "spl": [
-                                                           {"name": "MPL 12", "spl_flag": true },
-                                                           {"name": "MPL 13", "spl_flag": true },
-                                                           {"name": "MPL 14", "spl_flag": true }
+                                                     {"name":"Level One - 2", "spl": [
+                                                       {"name": "Level Two - 5", "spl": [
+                                                            {"name": "Level Three - 12", "spl_flag": "X" },
+                                                            {"name": "Level Three - 13", "spl_flag": "X" }
                                                          ]},
-                                                         {"name": "LH4 - Customer 6", "spl": [
-                                                           {"name": "MPL 15", "spl_flag": true },
-                                                           {"name": "MPL 16", "spl_flag": true }
-                                                         ]},
-                                                         {"name": "LH4 - Customer 7", "spl": [
-                                                           {"name": "MPL 17", "spl_flag": true },
-                                                           {"name": "MPL 18", "spl_flag": true },
-                                                           {"name": "MPL 19", "spl_flag": true },
-                                                           {"name": "MPL 20", "spl_flag": true }
-                                                         ]},
-                                                         {"name": "LH4 - Customer 8", "spl": [
-                                                           {"name": "MPL 21", "spl_flag": true },
-                                                           {"name": "MPL 22", "spl_flag": true }
+                                                         {"name": "Level Two - 6", "spl": [
+                                                           {"name": "Level Three - 14", "spl_flag": "X" },
+                                                           {"name": "Level Three - 15", "spl_flag": "X" }
                                                          ]}
                                                      ]}
                                            ]};
