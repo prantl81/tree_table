@@ -325,7 +325,7 @@
 
               if ( lh4_index !== -1) {
                 let lh4_array = tableData[channel_index].spl[lh4_index].spl;
-                
+                lh4_array.push({"name": "MPL 99", "spl_flag": true });
               }
           }
 
