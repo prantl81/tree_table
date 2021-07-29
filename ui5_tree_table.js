@@ -314,7 +314,7 @@
 
           //First check highest level -> channel_index
           let channel_index = tableData.findIndex(function (line) {
-            return line.name === "Channel 2";
+            return line.name === "Channel 3";
           });
           if ( channel_index !== -1) {
 
@@ -327,13 +327,22 @@
                 let lh4_array = tableData[channel_index].spl[lh4_index].spl;
                 lh4_array.push({"name": "MPL 99", "spl_flag": true });
               }
+          } else {
+            // new top node -> create all three levels
+            let mpl = {"name": "MPL 98", "spl_flag": true };
+            let lh4 = {"name": "LH4 - Customer 99", "spl": []};
+            let channel = {"name":"Channel 3", "spl": []};
+            lh4.spl.push(mpl);
+            channel.spl.push(lh4);
           }
 
 
           /*
           {"name":"Channel 2", "spl": [
             {"name": "LH4 - Customer 5", "spl": [
-                {"name": "MPL 12", "spl_flag": true },
+                {"name": "MPL 12", "spl_flag": true }
+              ]}
+            ]}
           */
 
           //now we check if nodes are already in the dataReceived
