@@ -313,7 +313,7 @@
           let oModel = TreeTable.getModel();
           oModel.createElement
           let oData = oModel.getData();
-          let tableData = oData.TableData;
+          let tableData = oData.spl;
           tableData.push(assosciated_array);
           oModel.refresh();
         }
