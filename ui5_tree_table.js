@@ -337,14 +337,14 @@
                 } else {
                   //new MPL push into existing LH4
                   let mpl = [{"name": mplNewRow, "spl_flag": splFlagBoolean }];
-                  lh4_array.push(mpl);
+                  tableData[channel_index].spl[lh4_index].spl.push(mpl);
                 }
 
               } else {
                 // new LH4 node added to existing channel
                 let mpl = [{"name": mplNewRow, "spl_flag": splFlagBoolean }];
                 let lh4 = [{"name": lh4NewRow, "spl": mpl}];
-                channel_array.spl.push(lh4);
+                tableData[channel_index].spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
