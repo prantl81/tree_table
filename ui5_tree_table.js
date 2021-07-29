@@ -294,26 +294,45 @@
 
         addRow(NewRow){
           debugger;
+
+          //here we get the new fields from SAC -> all fields are filled
           let x1 = NewRow.channel;   //-> Top Node, Channel
           let x2 = NewRow.lh4;   //-> Second Level, LH4
           let x3 = NewRow.mpl;   //-> MPL, details
           let x4 = NewRow.spl;   //-> SPL flag (X = true/ "" = false)
 
+          //Map SPL Flag X to true or empty to false
           let x5 = true;
-
           if ( x4 === "X" ) { x5 = true } else { x5 = false};
-
-
-          let assosciated_array = {
-            name : x3,
-            spl_flag : x5
-          }
 
           let  TreeTable = window.globVar_UI5_Table;
           let oModel = TreeTable.getModel();
           oModel.createElement
           let oData = oModel.getData();
           let tableData = oData.spl;
+
+          /*
+          {"name":"Channel 2", "spl": [
+            {"name": "LH4 - Customer 5", "spl": [
+                {"name": "MPL 12", "spl_flag": true },
+          */
+
+          //now we check if nodes are already in the dataReceived
+          let mpl_index_1 = tableData.indexOf("MPL 12");
+          let lh4_index_1 = tableData.indexOf("LH 4 - Customer 5");
+          let channel_index_1 = tableData.indexOf("Channel 2");
+
+          //now we check if nodes are already in the dataReceived
+          let mpl_index = tableData.indexOf(x3);
+          let lh4_index = tableData.indexOf(x2);
+          let channel_index = tableData.indexOf(x1);
+          
+          let assosciated_array = {
+            name : x3,
+            spl_flag : x5
+          }
+
+
           tableData.push(assosciated_array);
           oModel.refresh();
         }
