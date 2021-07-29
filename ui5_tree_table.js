@@ -19,7 +19,7 @@
                    <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="25" enableSelectAll="false" ariaLabelledBy="title">
                        <extension>
                           <m:OverflowToolbar style="Clear">
-                             <m:SearchField id="searchField" width="30%" placeholder="Search for MPL/LH4/Channel" search=".onSearch" suggest=".onSuggest" suggestionItems="{path: '/spl'}">
+                             <m:SearchField id="searchField" width="30%" placeholder="Search for Customer" search=".onSearch" suggest=".onSuggest" suggestionItems="{path: '/spl'}">
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
