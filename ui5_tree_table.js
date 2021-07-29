@@ -316,7 +316,7 @@
           let channel_index = tableData.findIndex(function (line) { return line.name === 'Channel 2'; });
           if ( channel_index !== -1) {
 
-            let channel_array = tableData[channel_index];
+            let channel_array = tableData[channel_index].spl;
             let lh4_index = channel_array.findIndex(function (line) { return line.name === 'LH 4 - Customer 5'; });
 
               if ( lh4_index !== -1) {
