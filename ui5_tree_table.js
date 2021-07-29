@@ -304,7 +304,7 @@
 
           let assosciated_array = {
             name : x3,
-            spl_flag : x5;
+            spl_flag : x5
           }
           */
           let  TreeTable = window.globVar_UI5_Table;
