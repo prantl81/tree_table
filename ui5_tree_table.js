@@ -299,10 +299,12 @@
           let x3 = NewRow.mpl;   //-> MPL, details
           let x4 = NewRow.spl;   //-> SPL flag (X = true/ "" = false)
 
+          if ( x4 === "X" ) { let x5 = true } else { x5 = false};
+
 
           let assosciated_array = {
             name : x3,
-            spl_flag : if ( x4 === "X" ) { true } else {false};
+            spl_flag : x5;
           }
           */
           let  TreeTable = window.globVar_UI5_Table;
@@ -517,7 +519,7 @@
                                                       {"name": "MPL 22", "spl_flag": true }
                                                     ]}
                                                 ]}
-                                      ]}; 
+                                      ]};
                                         }
 
 
