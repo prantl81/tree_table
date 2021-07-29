@@ -323,13 +323,13 @@
             //channel already exists
               var channel_array = tableData[channel_index].spl;
               var lh4_index = channel_array.findIndex(function (line) {
-                return line.spl.name === lh4NewRow;
+                return line.name === lh4NewRow;
               });
 
               if ( lh4_index !== -1) {
                 var lh4_array = tableData[channel_index].spl[lh4_index].spl;
                 var mpl_index = lh4_array.findIndex(function (line) {
-                  return line.spl.name === mplNewRow;
+                  return line.name === mplNewRow;
                 });
                 if ( mpl_index !== -1) {
                   //existing MPL -> only update flag
