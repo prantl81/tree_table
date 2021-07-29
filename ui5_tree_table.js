@@ -294,23 +294,24 @@
 
         addRow(NewRow){
           debugger;
-          var x2 = NewRow.a;
-          /*
-          let arrayMembers = NewRow.split('|');
+          let x1 = NewRow.channel;   //-> Top Node, Channel
+          let x2 = NewRow.lh4;   //-> Second Level, LH4
+          let x3 = NewRow.mpl;   //-> MPL, details
+          let x4 = NewRow.spl;   //-> SPL flag (X = true/ "" = false)
+
 
           let assosciated_array = {
-            Name : arrayMembers[0],
-            ProductId : arrayMembers[1],
-            Quantity  : arrayMembers[2],
-            DeliveryDate : arrayMembers[3]
+            name : x3,
+            spl_flag : if ( x4 === "X" ) { true } else {false};
           }
           */
           let  TreeTable = window.globVar_UI5_Table;
           let oModel = TreeTable.getModel();
+          oModel.createElement
           let oData = oModel.getData();
           let tableData = oData.TableData;
-          //tableData.push(assosciated_array);
-          //oModel.refresh();
+          tableData.push(assosciated_array);
+          oModel.refresh();
         }
 
 
@@ -472,8 +473,8 @@
                                            ]};
                                         } else {
                                         // not design mode -> we do not pass example data
-                                        var oData = { "spl": []};
-                                      /* var oData =  { "spl": [
+                                      //  var oData = { "spl": []};
+                                       var oData =  { "spl": [
                                                 {"name":"Channel 1", "spl": [
                                                     {"name": "LH4 - Customer 1", "spl": [
                                                       {"name": "MPL 1", "spl_flag": true },
@@ -516,7 +517,7 @@
                                                       {"name": "MPL 22", "spl_flag": true }
                                                     ]}
                                                 ]}
-                                      ]}; */
+                                      ]}; 
                                         }
 
 
