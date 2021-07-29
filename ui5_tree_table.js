@@ -320,7 +320,7 @@
             let lh4_index = channel_array.findIndex(function (line) { return line.name === 'LH 4 - Customer 5'; });
 
               if ( lh4_index !== -1) {
-                 
+
               }
           }
 
@@ -339,7 +339,7 @@
           //now we check if nodes are already in the dataReceived
           let mpl_index = tableData.indexOf(x3);
           let lh4_index = tableData.indexOf(x2);
-          let channel_index = tableData.indexOf(x1);
+          //let channel_index = tableData.indexOf(x1);
 
           let assosciated_array = {
             name : x3,
