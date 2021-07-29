@@ -356,13 +356,13 @@
           let lh4_index = tableData.indexOf(x2);
           //let channel_index = tableData.indexOf(x1);
 
-          let assosciated_array = {
+          /*let assosciated_array = {
             name : x3,
             spl_flag : x5
           }
 
 
-          tableData.push(assosciated_array);
+          tableData.push(assosciated_array);*/
           oModel.refresh();
         }
 
