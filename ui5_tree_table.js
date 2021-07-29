@@ -334,6 +334,7 @@
             let channel = {"name":"Channel 3", "spl": []};
             lh4.spl.push(mpl);
             channel.spl.push(lh4);
+            tableData.push(channel);
           }
 
 
