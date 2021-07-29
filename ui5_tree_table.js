@@ -296,10 +296,10 @@
           debugger;
 
           //here we get the new fields from SAC -> all fields are filled
-          var channelNewRow = NewRow.channel;   //-> Top Node, Channel
-          var lh4NewRow = NewRow.lh4;   //-> Second Level, LH4
-          var mplNewRow = NewRow.mpl;   //-> MPL, details
-          var splFlagNewRow = NewRow.spl;   //-> SPL flag (X = true/ "" = false)
+          var channelNewRow = NewRow.l1;   //-> Top Node, Channel
+          var lh4NewRow = NewRow.l2;   //-> Second Level, LH4
+          var mplNewRow = NewRow.l3;   //-> MPL, details
+          var splFlagNewRow = NewRow.flag;   //-> SPL flag (X = true/ "" = false)
 
           //Map SPL Flag X to true or empty to false
           var splFlagBoolean = true;
