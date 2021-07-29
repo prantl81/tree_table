@@ -311,6 +311,20 @@
           let oData = oModel.getData();
           let tableData = oData.spl;
 
+
+          //First check highest level -> channel_index
+          let channel_index = tableData.findIndex(function (line) { return line.name === 'Channel 2'; });
+          if ( channel_index !== -1) {
+
+            let channel_array = tableData[channel_index];
+            let lh4_index = channel_array.findIndex(function (line) { return line.name === 'LH 4 - Customer 5'; });
+
+              if ( lh4_index !== -1) {
+                 
+              }
+          }
+
+
           /*
           {"name":"Channel 2", "spl": [
             {"name": "LH4 - Customer 5", "spl": [
@@ -320,7 +334,7 @@
           //now we check if nodes are already in the dataReceived
           let mpl_1 = tableData.findIndex(function (line) { return line.name === 'MPL 12'; });
           let lh4_index_1 = tableData.indexOf("LH 4 - Customer 5");
-          let channel_index_1 = tableData.findIndex(function (line) { return line.name === 'Channel 2'; });
+
 
           //now we check if nodes are already in the dataReceived
           let mpl_index = tableData.indexOf(x3);
