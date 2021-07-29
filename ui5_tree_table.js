@@ -353,9 +353,6 @@
             let channel = {"name":"Channel 3", "spl": lh4};
             tableData.push(channel);
           }
-
-
-          tableData.push(assosciated_array);*/
           oModel.refresh();
         }
 
