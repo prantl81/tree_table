@@ -35,7 +35,7 @@
                              </template>
                           </Column>
                           <Column  hAlign="Center">
-                              <m:Label text="SPL" />
+                              <m:Label text="Flag" />
                               <template>
                                   <m:CheckBox selected="{spl_flag}" enabled="true"/>
                               </template>
