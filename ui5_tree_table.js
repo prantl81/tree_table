@@ -306,7 +306,7 @@
             name : x3,
             spl_flag : x5
           }
-          */
+          
           let  TreeTable = window.globVar_UI5_Table;
           let oModel = TreeTable.getModel();
           oModel.createElement
