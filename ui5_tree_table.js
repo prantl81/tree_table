@@ -180,6 +180,7 @@
 
               debugger;
 			        this.render(20);
+              this.dispatchEvent(new Event("handleVisibleRowChange", { }));
               //window.globVar_UI5_Table.visibleRowCount=11;
 
           }
@@ -585,6 +586,10 @@
                                    			//MessageToast.show("Details for product with id");
                                         let buttonContext = oEvent.getSource().getBindingContext().getObject();
                                         that.dispatchEvent(new CustomEvent("VersionDeletePressed", { detail: { buttonContext } } ));
+                                   },
+
+                                   handleVisibleRowChange: function(oEvent) {
+                                     debugger;
                                    },
                                    onCollapseAll: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
