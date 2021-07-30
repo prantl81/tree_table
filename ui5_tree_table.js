@@ -299,7 +299,7 @@
           // ---------------   "custom" methods of the widget --------------------------------
 
         render(numberVisibleRows) {
-          var TreeTable = window.globVar_UI5_Table;
+          var TreeTable = this.byId('TreeTable');
           TreeTable.setVisibleRowCount(19);
         }
 
