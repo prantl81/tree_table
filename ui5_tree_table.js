@@ -44,9 +44,9 @@
               </m:Page>
            </mvc:View>
         </script>
-    `;
+    ';
 
-    tmpl.innerHTML.getElementById("TreeTable").visibleRowCount =  numberRows;
+    tmpl.innerHTML.replace("visibleRowCount = ",  "xxx");
 
 
 
