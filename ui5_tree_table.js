@@ -181,7 +181,7 @@
               if ("rowsVisble" in changedProperties) {
                 this.$rowsVisble = changedProperties["rowsVisble"];
               }
-
+              debugger;
 			        this.render(this.$rowsVisble);
               let TreeTabel = document.getElementById('TreeTable').innerHTML;
               TreeTable.visibleRowCount=11;
