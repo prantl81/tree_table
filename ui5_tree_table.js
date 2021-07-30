@@ -83,10 +83,6 @@
                  }
              });
 
-        render(numberVisibleRows) {
-			     let  TreeTable = window.globVar_UI5_Table;
-
-		    }
 
 
              this.addEventListener("VersionOpenPressed", event => {
@@ -183,9 +179,9 @@
               }
 
               debugger;
-			       /* this.render(this.$rowsVisble);
+			       /this.render(this.$rowsVisble);
               let TreeTabel = document.getElementById('TreeTable').innerHTML;
-              TreeTable.visibleRowCount=11; */
+              TreeTable.visibleRowCount=11; 
 
           }
 
@@ -302,6 +298,11 @@
 
 
           // ---------------   "custom" methods of the widget --------------------------------
+
+        render(numberVisibleRows) {
+            let  TreeTable = window.globVar_UI5_Table;
+        }
+
 
         addRow(NewRow){
           debugger;
