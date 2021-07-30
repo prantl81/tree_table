@@ -15,7 +15,7 @@
            <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
               <m:Page showHeader="false" enableScrolling="false">
                  <m:content>
-                   <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="10" enableSelectAll="false" ariaLabelledBy="title">
+                   <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="15" enableSelectAll="false" ariaLabelledBy="title">
                        <extension>
                           <m:OverflowToolbar style="Clear">
                              <m:SearchField id="searchField" width="30%" placeholder="Search for Customer" search=".onSearch" suggest=".onSuggest" suggestionItems="{path: '/spl'}">
