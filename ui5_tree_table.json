@@ -51,6 +51,10 @@
 					"description": "JSON String holding the data of the new record"}
 			]
 		},
+   "removeAllRows": {
+		 "description": "Remves all Rows from the table",
+		 "returnType" : "string"
+	 },
 		"deleteRow": {
 			"description": "Delete a row from the table",
 			"returnType" : "string",

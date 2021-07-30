@@ -370,6 +370,24 @@
           oModel.refresh();
         }
 
+        removeAllRows(){
+
+          var TreeTable = window.globVar_UI5_Table;
+          var oModel = TreeTable.getModel();
+          var oData = oModel.getData();
+          //var tableData = oData.spl;
+
+          oData = {
+             "spl": []};
+           }
+
+          oModel.refresh();
+          
+          return "all rows are deleted.";
+
+
+       }
+
 
         deleteRow(RowToDelete){
 
