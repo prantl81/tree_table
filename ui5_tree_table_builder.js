@@ -6,8 +6,8 @@
         <legend>Number of Rows</legend>
           <table>
             <tr>
-              <td>Color</td>
-              <td><input id="rowsVisble" type="integer" size="10" maxlength="2"></td>
+              <td>Number of Rows</td>
+              <td><input id="rowsVisble" type="integer" size="2" maxlength="2"></td>
             </tr>
           </table>
             <input type="submit" style="display:none;">
@@ -40,11 +40,11 @@
     			}));
     		}
 
-    		set color(newNumberRowsVisble) {
+    		set numberVisibleRows(newNumberRowsVisble) {
     			this._shadowRoot.getElementById("rowsVisble").value = newNumberRowsVisble;
     		}
 
-    		get color() {
+    		get numberVisibleRows() {
     			return this._shadowRoot.getElementById("rowsVisble").value;
     		}
     	}
