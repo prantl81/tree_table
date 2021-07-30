@@ -179,8 +179,8 @@
               }
 
               debugger;
-			        //this.render(this.$rowsVisble);
-              window.globVar_UI5_Table.visibleRowCount=11;
+			        this.render(20);
+              //window.globVar_UI5_Table.visibleRowCount=11;
 
           }
 
@@ -299,7 +299,8 @@
           // ---------------   "custom" methods of the widget --------------------------------
 
         render(numberVisibleRows) {
-
+          var TreeTable = window.globVar_UI5_Table;
+          TreeTable.setVisibleRowCount(19);
         }
 
 
