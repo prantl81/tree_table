@@ -378,7 +378,6 @@
 
           return "all rows are deleted.";
 
-
        }
 
 
