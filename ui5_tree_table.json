@@ -35,7 +35,7 @@
       "type": "integer",
       "description": "number of visible rows",
       "default": 10
-    }
+    },
     "rowDetails": {
       "type": "string",
       "description": "row details",
