@@ -46,7 +46,7 @@
         </script>
     `;
 
-    tmpl.innerHTML.script.View.Page.content.TreeTable.visibleRowCount = numberRows;
+    tmpl.innerHTML.getElementById("TreeTable").visibleRowCount =  numberRows;
 
 
 
