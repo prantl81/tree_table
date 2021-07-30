@@ -307,7 +307,6 @@
 
 
         addRow(NewRow){
-          debugger;
 
           //here we get the new fields from SAC -> all fields are filled
           var channelNewRow = NewRow.l1;   //-> Top Node, Channel
@@ -375,14 +374,13 @@
           var TreeTable = window.globVar_UI5_Table;
           var oModel = TreeTable.getModel();
           var oData = oModel.getData();
-          //var tableData = oData.spl;
+          var tableData = oData.spl;
 
-          oData = {
-             "spl": []};
-           }
+          tableData = {[]};
+
 
           oModel.refresh();
-          
+
           return "all rows are deleted.";
 
 
