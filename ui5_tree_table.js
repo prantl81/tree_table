@@ -83,6 +83,11 @@
                  }
              });
 
+        render(numberVisibleRows) {
+			     let  TreeTable = window.globVar_UI5_Table;
+
+		    }
+
 
              this.addEventListener("VersionOpenPressed", event => {
                  let detail = event.detail.buttonContext;
@@ -173,9 +178,12 @@
 
               loadthis(this);
 
-              if ("rowDetails" in changedProperties) {
-                this.rowDetails = changedProperties["rowDetails"];
+              if ("rowsVisble" in changedProperties) {
+                this.$rowsVisble = changedProperties["rowsVisble"];
               }
+
+			        this.render(this.$rowsVisble);
+
           }
 
 
