@@ -532,6 +532,8 @@
 
                                    onBeforeRendering: function() {
                                          window.globVar_UI5_Table = this.byId('TreeTable');
+                                         var oTreeTable = this.byId("TreeTable");
+ 			                                   oTreeTable.expandToLevel(1);
                                    },
 
                                    onSearch : function () {
