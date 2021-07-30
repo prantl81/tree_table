@@ -346,7 +346,7 @@
                 });
                 if ( mpl_index !== -1) {
                   //existing MPL -> only update flag
-                  lh4_array.spl[mpl_index].spl_flag = splFlagBoolean;
+                  tableData[channel_index].spl[lh4_index].spl[mpl_index].spl_flag = splFlagBoolean;
                 } else {
                   //new MPL push into existing LH4
                   let mpl = {"name": mplNewRow, "spl_flag": splFlagBoolean };
