@@ -179,7 +179,7 @@
               }
 
               debugger;
-			        this.render(20);
+			        //this.render(20);
               this.dispatchEvent(new Event("handleVisibleRowChange", { }));
               //window.globVar_UI5_Table.visibleRowCount=11;
 
