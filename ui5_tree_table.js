@@ -180,7 +180,7 @@
 
               debugger;
 			        //this.render(this.$rowsVisble);
-              let TreeTabel = document.getElementById('TreeTable').innerHTML;
+              let TreeTabel = document.getElementById("TreeTable").innerHTML;
               TreeTable.visibleRowCount=11;
 
           }
