@@ -3,11 +3,11 @@
     template.innerHTML = `
     <form id="form">
       <fieldset>
-        <legend>Number of Rows</legend>
+        <legend>Table Settings</legend>
           <table>
             <tr>
               <td>Number of Rows</td>
-              <td><input id="rowsVisble" type="integer" size="2" maxlength="2"></td>
+              <td><input id="rowsVisble" type="number" min="1" max="50" size="2" maxlength="2"></td>
             </tr>
           </table>
             <input type="submit" style="display:none;">
