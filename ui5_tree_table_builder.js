@@ -1,11 +1,6 @@
 (function() {
-    window.globVar_UI5_Table = "test";
-    let _shadowRoot;
-    let _id;
-    let _password;
-
-    let tmpl = document.createElement("template");
-    tmpl.innerHTML = `
+    let template = document.createElement("template");
+    template.innerHTML = `
     <form id="form">
       <fieldset>
         <legend>Number of Rows</legend>
