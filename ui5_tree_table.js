@@ -1,5 +1,6 @@
 (function() {
     let _shadowRoot;
+    let _id;
     window.globVar_UI5_Table = "test";
 
     let tmpl = document.createElement("template");
