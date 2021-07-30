@@ -534,7 +534,7 @@
                                          window.globVar_UI5_Table = this.byId('TreeTable');
                                          var oTreeTable = this.byId("TreeTable");
  			                                   oTreeTable.expandToLevel(1);
-                                         oTreeTable.setVisibleRowCount = 15;
+                                        // oTreeTable.setVisibleRowCount = 15;
                                    },
 
                                    onSearch : function () {
