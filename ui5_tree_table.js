@@ -374,9 +374,9 @@
           var TreeTable = window.globVar_UI5_Table;
           var oModel = TreeTable.getModel();
           var oData = oModel.getData();
-          var tableData = oData.spl;
+          //var tableData = oData.spl;
 
-          tableData = {[]};
+          oData = {spl: []};
 
 
           oModel.refresh();
