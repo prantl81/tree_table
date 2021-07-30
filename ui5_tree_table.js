@@ -1,6 +1,6 @@
 (function() {
+    let _shadowRoot;
     window.globVar_UI5_Table = "test";
-    var numberRows = 10;
 
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
@@ -46,7 +46,7 @@
         </script>
     ';
 
-    tmpl.innerHTML.replace("visibleRowCount = ",  "xxx");
+
 
 
 
