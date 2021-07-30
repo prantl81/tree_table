@@ -46,6 +46,9 @@
         </script>
     ';
 
+    tmpl.innerHTML.replace("visibleRowCount = ",  "xxx");
+
+
 
 // ------------------------------------------------------------------
     class Ui5TreeTable extends HTMLElement {
