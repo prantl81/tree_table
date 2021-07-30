@@ -179,9 +179,9 @@
               }
 
               debugger;
-			       /this.render(this.$rowsVisble);
+			        this.render(this.$rowsVisble);
               let TreeTabel = document.getElementById('TreeTable').innerHTML;
-              TreeTable.visibleRowCount=11; 
+              TreeTable.visibleRowCount=11;
 
           }
 
