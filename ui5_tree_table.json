@@ -16,7 +16,14 @@
       "url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table.js",
       "integrity": "",
       "ignoreIntegrity": true
-    }
+    },
+		{
+			"kind": "builder",
+			"tag": "tp-sac-tree-table-ui5-builder",
+			"url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table_builder.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
   ],
   "properties": {
     "metadata": {
@@ -24,6 +31,11 @@
       "description": "For internal use",
       "default": ""
     },
+		"rowsVisble": {
+      "type": "integer",
+      "description": "number of visible rows",
+      "default": 10
+    }
     "rowDetails": {
       "type": "string",
       "description": "row details",
