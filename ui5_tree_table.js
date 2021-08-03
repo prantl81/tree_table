@@ -73,17 +73,7 @@
                 let detail = event.detail.checkBoxContext;
                 let returnValue = "";
 
-                //Loop Over Object to get only values into
-                let index = 0;
-                for (const [key, value] of Object.entries(detail)) {
-                  //we start not with a | , format: <field1>|<field2>|<field3>
-                      if ( index === 0 ){
-                          returnValue = value;
-                      } else {
-                          returnValue = returnValue + "|" + value;
-                      }
-                      index = index + 1;
-                }
+                debugger;
 
             //change property rowDetails
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
@@ -484,6 +474,18 @@
                 return "no row selected!"
             }
         }
+
+
+      getRowfromPropertyObject(){
+        debugger;
+        return this.checkBoxChanged ;
+      }
+
+
+
+
+
+
 
 
           // ---------------   other methods of the widget --------------------------------
