@@ -5,7 +5,7 @@
 	"description": "Tree Tablee",
 	"newInstancePrefix": "treeTable",
 	"icon": "https://prantl81.github.io/ui5_tree_table/icon.png",
-	"vendor": "evosight gmbh",
+	"vendor": "rb",
 	"eula": "",
 	"license": "",
 	"imports": [""],
