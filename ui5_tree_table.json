@@ -66,9 +66,9 @@
 			"body": "return this.rowDetails;"
 		},
 		"getRowfromPropertyObject": {
-			"returnType": "string",
+			"returnType": "Object<string>",
 			"description": "Returns the property rowDetails",
-			"body": "return this.checkBoxChanged[a,b,c];"
+			"body": "return this.checkBoxChanged;"
 		}
   },
   "events": {
