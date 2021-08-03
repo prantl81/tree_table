@@ -57,6 +57,8 @@
         constructor() {
             super();
 
+
+
             _shadowRoot = this.attachShadow({
                 mode: "open"
             });
@@ -206,6 +208,10 @@
 
               if ("rowsVisble" in changedProperties) {
                 this.$rowsVisble = changedProperties["rowsVisble"];
+              }
+
+              if ("checkBoxChanged" in changedProperties) {
+                this.checkBoxChanged = changedProperties["checkBoxChanged"];
               }
 
               debugger;
