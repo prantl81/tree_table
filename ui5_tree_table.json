@@ -40,6 +40,11 @@
       "type": "string",
       "description": "row details",
       "default": ""
+    },
+		"checkBoxChanged": {
+      "type":  "Object<string>",
+      "description": "JSON String holding the data of the new record",
+      "default": ""
     }
   },
   "methods": {
@@ -52,13 +57,18 @@
 			]
 		},
    "removeAllRows": {
-		 "description": "Remves all Rows from the table",
+		 "description": "Removes all Rows from the table",
 		 "returnType" : "string"
 	 },
 		"getRowfromProperty": {
 			"returnType": "string",
 			"description": "Returns the property rowDetails",
 			"body": "return this.rowDetails;"
+		},
+		"getRowfromPropertyObject": {
+			"returnType": "string",
+			"description": "Returns the property rowDetails",
+			"body": "return this.checkBoxChanged;"
 		}
   },
   "events": {

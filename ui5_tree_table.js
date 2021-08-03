@@ -89,7 +89,7 @@
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
                   detail: {
                     properties: {
-                      rowDetails: returnValue
+                      checkBoxChanged: detail
                     }
                   }
               }
