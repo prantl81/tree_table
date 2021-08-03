@@ -36,7 +36,7 @@
                           <Column  hAlign="Center">
                               <m:Label text="Flag" />
                               <template>
-                                  <m:CheckBox selected="{spl_flag}" enabled="true"/>
+                                  <m:CheckBox selected="{spl_flag}" enabled="true" select="onCheckBoxSelect"/>
                               </template>
                           </Column>
                        </columns>
@@ -613,6 +613,10 @@
 		                               onExpandFirstLevel: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
 			                                  oTreeTable.expandToLevel(1);
+		                               },
+
+                                   onCheckBoxSelect: function() {
+                                      debugger;
 		                               }
                                });
 
