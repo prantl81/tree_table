@@ -77,6 +77,8 @@
 
                 debugger;
 
+                this._props.checkBoxChanged = detail;
+
             //change property rowDetails
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
                   detail: {
