@@ -616,7 +616,8 @@
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
-                                      debugger;
+                                     let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
+                                     debugger;
 		                               }
                                });
 
