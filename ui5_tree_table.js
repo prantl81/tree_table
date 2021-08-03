@@ -478,7 +478,8 @@
 
       getRowfromPropertyObject(){
         debugger;
-        return this.checkBoxChanged ;
+        let checkBoxChangedObject = this._props.checkBoxChanged;
+        return checkBoxChangedObject ;
       }
 
 
