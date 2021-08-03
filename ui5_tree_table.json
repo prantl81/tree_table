@@ -43,8 +43,7 @@
     },
 		"checkBoxChanged": {
       "type":  "Object<string>",
-      "description": "JSON String holding the data of the new record",
-      "default": ""
+      "description": "JSON String holding the data of the new record"
     }
   },
   "methods": {
