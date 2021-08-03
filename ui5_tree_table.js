@@ -615,7 +615,7 @@
 			                                  oTreeTable.expandToLevel(1);
 		                               },
 
-                                   onCheckBoxSelect: function() {
+                                   onCheckBoxSelect: function(oEvent) {
                                       debugger;
 		                               }
                                });
