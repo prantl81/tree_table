@@ -66,6 +66,45 @@
 
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
 
+
+            //-- Custom Widget events
+
+            this.addEventListener("onCheckBoxChange_UI5_event", event => {
+                let detail = event.detail.checkBoxContext;
+                let returnValue = "";
+
+                //Loop Over Object to get only values into
+                let index = 0;
+                for (const [key, value] of Object.entries(detail)) {
+                  //we start not with a | , format: <field1>|<field2>|<field3>
+                      if ( index === 0 ){
+                          returnValue = value;
+                      } else {
+                          returnValue = returnValue + "|" + value;
+                      }
+                      index = index + 1;
+                }
+
+            //change property rowDetails
+            this.dispatchEvent(new CustomEvent("propertiesChanged", {
+                  detail: {
+                    properties: {
+                      rowDetails: returnValue
+                    }
+                  }
+              }
+            ));
+
+            //inform the widget that the version button was pressed, in SAC we can then read the property rowDetails
+            this.dispatchEvent(new Event("onCheckBoxChange", { }));
+
+        });
+
+
+
+
+
+
             this.addEventListener("click", event => {
                  console.log('click');
                  let  TreeTable = window.globVar_UI5_Table
@@ -381,6 +420,8 @@
        }
 
 
+
+
         deleteRow(RowToDelete){
 
           //alternativly -> get selected row
@@ -616,8 +657,9 @@
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
-                                     let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
                                      debugger;
+                                     let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
+                                     that.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
 		                               }
                                });
 

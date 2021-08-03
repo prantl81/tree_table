@@ -55,18 +55,6 @@
 		 "description": "Remves all Rows from the table",
 		 "returnType" : "string"
 	 },
-		"deleteRow": {
-			"description": "Delete a row from the table",
-			"returnType" : "string",
-			"parameters":
-			[{ "name" : "RowToDelete",
-					"type": "string",
-					"description": "String separated by |"}]
-		},
-		"getSelectedRow": {
-			"description" : "Add a new row to the table",
-			 "returnType" : "string"
-		},
 		"getRowfromProperty": {
 			"returnType": "string",
 			"description": "Returns the property rowDetails",
@@ -77,6 +65,9 @@
   	"onStart": {
       "description": "onStart events trigger"
     },
+		"onCheckBoxChange": {
+			"description": "check box changed"
+		},
 		"onSelectionChange": {
 			"description": "Selection Changed"
 		},
