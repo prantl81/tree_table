@@ -72,6 +72,8 @@
 
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
 
+            this.$tableVisibleRowCount = _shadowRoot.querySelector("TreeTable").visibleRowCount;
+
 
             //-- Custom Widget - Events
 
