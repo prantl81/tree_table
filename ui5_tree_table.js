@@ -42,7 +42,7 @@
                           <Column  hAlign="Center">
                               <m:Label text="Flag" />
                               <template>
-                                  <m:CheckBox selected="{spl_flag}" enabled="true" select="onCheckBoxSelect"/>
+                                  <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
                               </template>
                           </Column>
                        </columns>
@@ -312,21 +312,21 @@
                   tableData[channel_index].spl[lh4_index].spl[mpl_index].spl_flag = splFlagBoolean;
                 } else {
                   //new MPL push into existing LH4
-                  let mpl = {"name": mplNewRow, "id": mplNewRowID, "spl_flag": splFlagBoolean };
+                  let mpl = {"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean };
                   tableData[channel_index].spl[lh4_index].spl.push(mpl);
                 }
 
               } else {
                 // new LH4 node added to existing channel
-                let mpl = [{"name": mplNewRow, "id": mplNewRowID, "spl_flag": splFlagBoolean }];
-                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID, "spl": mpl};
+                let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
+                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled": false, "spl": mpl};
                 tableData[channel_index].spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
-            let mpl = [{"name": mplNewRow, "id": mplNewRowID, "spl_flag": splFlagBoolean }];
-            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "spl": mpl}];
-            let channel = {"name": channelNewRow, "id": channelNewRowID, "spl": lh4};
+            let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
+            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": false, spl": mpl}];
+            let channel = {"name": channelNewRow, "id": channelNewRowID, "flagEnabled": false, "spl": lh4};
             tableData.push(channel);
           }
           oModel.refresh();
