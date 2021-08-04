@@ -15,10 +15,10 @@
            <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
               <m:Page showHeader="false" enableScrolling="false">
                  <m:content>
-                   <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="15" enableSelectAll="false" ariaLabelledBy="title" filter=".onfilter">
+                   <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="15" enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
                        <extension>
                           <m:OverflowToolbar style="Clear">
-                             <m:SearchField id="searchField" width="30%" placeholder="Search for Customer" search=".onSearch" suggest=".onSuggest" suggestionItems="{path: '/spl'}">
+                             <m:SearchField id="searchField" width="30%" placeholder="Search for Customer" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}">
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
@@ -453,6 +453,7 @@
                                    },
 
                                    onSearch : function () {
+                                          debugger;
 			                                  var oView = this.getView(),
 				                                sValue = oView.byId("searchField").getValue(),
 				                                oFilter = new Filter("name", FilterOperator.Contains, sValue);
@@ -460,7 +461,7 @@
                                         oView.byId("TreeTable").getBinding("rows").expandToLevel(3);
 		                                    },
                                    onSuggest: function(event) {
-
+                                          debugger;
                                           var sValue = event.getParameter("suggestValue"),
       		                                  aFilters = [];
                                             if (sValue) {
@@ -515,7 +516,7 @@
 		                               },
 
                                    onFilter: function(oEvent){
-
+                                      debugger;
                                    },
 
                                    //Filter
