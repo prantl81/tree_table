@@ -512,7 +512,14 @@
                                      debugger;
                                      let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
                                      that.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
-		                               }
+		                               },
+
+                                   //Filter
+                                   onSelection: function(oEvent){
+                                      debugger;
+                                    }
+
+
                                });
 
 
