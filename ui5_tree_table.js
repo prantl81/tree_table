@@ -33,6 +33,12 @@
                                 <m:Text text="{name}" wrapping="false" />
                              </template>
                           </Column>
+                          <Column width="25rem" sortProperty="name" filterProperty="name">
+                             <m:Label text="Customer" />
+                             <template>
+                                <m:Text text="{id}" wrapping="false" />
+                             </template>
+                          </Column>
                           <Column  hAlign="Center">
                               <m:Label text="Flag" />
                               <template>
@@ -263,9 +269,12 @@
 
         addRow(NewRow){
           //here we get the new fields from SAC -> all fields are filled
-          var channelNewRow = NewRow.l1;   //-> Top Node, Channel
+          var channelNewRow   = NewRow.l1;   //-> Top Node, Channel
+          var channelNewRowID = NewRow.l1Id;
           var lh4NewRow = NewRow.l2;   //-> Second Level, LH4
+          var lh4NewRowID = NewRow.l2Id;   //-> Second Level, LH4
           var mplNewRow = NewRow.l3;   //-> MPL, details
+          var mplNewRowID = NewRow.l3Id;   //-> MPL, details
           var splFlagNewRow = NewRow.flag;   //-> SPL flag (X = true/ "" = false)
 
           //Map SPL Flag X to true or empty to false
@@ -303,21 +312,21 @@
                   tableData[channel_index].spl[lh4_index].spl[mpl_index].spl_flag = splFlagBoolean;
                 } else {
                   //new MPL push into existing LH4
-                  let mpl = {"name": mplNewRow, "spl_flag": splFlagBoolean };
+                  let mpl = {"name": mplNewRow, "id": "801001", "spl_flag": splFlagBoolean };
                   tableData[channel_index].spl[lh4_index].spl.push(mpl);
                 }
 
               } else {
                 // new LH4 node added to existing channel
-                let mpl = [{"name": mplNewRow, "spl_flag": splFlagBoolean }];
-                let lh4 = {"name": lh4NewRow, "spl": mpl};
+                let mpl = [{"name": mplNewRow, "id": "801001", "spl_flag": splFlagBoolean }];
+                let lh4 = {"name": lh4NewRow, "id": "801001", "spl": mpl};
                 tableData[channel_index].spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
-            let mpl = [{"name": mplNewRow, "spl_flag": splFlagBoolean }];
-            let lh4 = [{"name": lh4NewRow, "spl": mpl}];
-            let channel = {"name": channelNewRow, "spl": lh4};
+            let mpl = [{"name": mplNewRow, "id": "801001", "spl_flag": splFlagBoolean }];
+            let lh4 = [{"name": lh4NewRow, "id": "801001", "spl": mpl}];
+            let channel = {"name": channelNewRow, "id": "801001", "spl": lh4};
             tableData.push(channel);
           }
           oModel.refresh();
