@@ -27,7 +27,7 @@
                           </m:OverflowToolbar>
                        </extension>
                        <columns>
-                          <Column width="25rem" sortProperty="name" filterProperty="name">
+                          <Column width="25rem" filterProperty="name">
                              <m:Label text="Customer" />
                              <template>
                                 <m:Text text="{name}" wrapping="false" />
