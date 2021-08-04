@@ -31,7 +31,7 @@
       "description": "For internal use",
       "default": ""
     },
-		"rowsVisble": {
+		"rowsVisible": {
       "type": "integer",
       "description": "number of visible rows",
       "default": 10

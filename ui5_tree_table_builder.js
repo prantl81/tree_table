@@ -7,7 +7,7 @@
           <table>
             <tr>
               <td>Number of Rows</td>
-              <td><input id="rowsVisble" type="number" min="1" max="50" size="2" maxlength="2"></td>
+              <td><input id="builder_rowsVisible" type="number" min="1" max="50" size="2" maxlength="2"></td>
             </tr>
           </table>
             <input type="submit" style="display:none;">
@@ -34,18 +34,18 @@
     			this.dispatchEvent(new CustomEvent("propertiesChanged", {
     					detail: {
     						properties: {
-    							rowsVisble: this.rowsVisble
+    							rowsVisible: this.rowsVisible
     						}
     					}
     			}));
     		}
 
-    		set numberVisibleRows(newNumberRowsVisble) {
-    			this._shadowRoot.getElementById("rowsVisble").value = newNumberRowsVisble;
+    		set rowsVisible(newNumberRowsVisble) {
+    			this._shadowRoot.getElementById("rowsVisible").value = newNumberRowsVisible;
     		}
 
-    		get numberVisibleRows() {
-    			return this._shadowRoot.getElementById("rowsVisble").value;
+    		get rowsVisible() {
+    			return this._shadowRoot.getElementById("builder_rowsVisible").value;
     		}
     	}
 
