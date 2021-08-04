@@ -131,15 +131,12 @@
           // executed after the properties of the custom widget have been updated.
           onCustomWidgetAfterUpdate(changedProperties) {
 
+              if ("rowsVisible" in changedProperties) {
+                this.$rowsVisible = changedProperties["rowsVisible"];
+              }
+
+
               loadthis(this);
-
-              if ("rowsVisble" in changedProperties) {
-                this.$rowsVisble = changedProperties["rowsVisble"];
-              }
-
-              if ("checkBoxChanged" in changedProperties) {
-                this.checkBoxChanged = changedProperties["checkBoxChanged"];
-              }
 
               debugger;
 			        //this.render(20);
