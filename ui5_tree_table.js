@@ -325,7 +325,7 @@
           } else {
             // new top node -> create all three levels
             let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": false, spl": mpl}];
+            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": false, "spl": mpl}];
             let channel = {"name": channelNewRow, "id": channelNewRowID, "flagEnabled": false, "spl": lh4};
             tableData.push(channel);
           }
