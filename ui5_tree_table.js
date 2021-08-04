@@ -319,13 +319,13 @@
               } else {
                 // new LH4 node added to existing channel
                 let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled": false, "spl": mpl};
+                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled": true, "spl": mpl};
                 tableData[channel_index].spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
             let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": false, "spl": mpl}];
+            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": true, "spl": mpl}];
             let channel = {"name": channelNewRow, "id": channelNewRowID, "flagEnabled": false, "spl": lh4};
             tableData.push(channel);
           }
