@@ -35,15 +35,6 @@
       "type": "integer",
       "description": "number of visible rows",
       "default": 10
-    },
-    "rowDetails": {
-      "type": "string",
-      "description": "row details",
-      "default": ""
-    },
-		"checkBoxChanged": {
-      "type":  "Object<string>",
-      "description": "JSON String holding the data of the new record"
     }
   },
   "methods": {
@@ -59,12 +50,7 @@
 		 "description": "Removes all Rows from the table",
 		 "returnType" : "string"
 	 },
-		"getRowfromProperty": {
-			"returnType": "string",
-			"description": "Returns the property rowDetails",
-			"body": "return this.rowDetails;"
-		},
-		"getRowfromPropertyObject": {
+		"getCheckBoxRow": {
 			"returnType": "Object<string>",
 			"description": "Returns the property rowDetails"
 		}
@@ -78,12 +64,6 @@
 		},
 		"onSelectionChange": {
 			"description": "Selection Changed"
-		},
-		"OpenVersionPress": {
-			"description": "Open Version Press"
-		},
-		"DeleteVersionPress": {
-			"description": "Delete Version Press"
 		}
   }
 }

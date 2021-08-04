@@ -57,8 +57,6 @@
         constructor() {
             super();
 
-
-
             _shadowRoot = this.attachShadow({
                 mode: "open"
             });
@@ -69,7 +67,7 @@
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
 
 
-            //-- Custom Widget events
+            //-- Custom Widget - Events
 
             this.addEventListener("onCheckBoxChange_UI5_event", event => {
                 let detail = event.detail.checkBoxContext;
@@ -77,29 +75,16 @@
 
                 debugger;
 
+                //Fill dummy property to read it via method getCheckBoxRow
                 this._props.checkBoxChanged = detail;
-
-            //change property rowDetails
-            this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                  detail: {
-                    properties: {
-                      checkBoxChanged: detail
-                    }
-                  }
-              }
-            ));
 
             //inform the widget that the version button was pressed, in SAC we can then read the property rowDetails
             this.dispatchEvent(new Event("onCheckBoxChange", { }));
 
-        });
+           });
 
 
-
-
-
-
-            this.addEventListener("click", event => {
+           this.addEventListener("click", event => {
                  console.log('click');
                  let  TreeTable = window.globVar_UI5_Table
                  let oSelectionIndex =  TreeTable.getSelectedIndex();
@@ -107,80 +92,14 @@
              					let context = TreeTable.getContextByIndex(oSelectionIndex);
              					let value = context.getProperty("ProductId");
 
-             					this.dispatchEvent(new Event("onSelectionChange", {
-             						  detail: {
-             								properties: {
-             								  rowDetails: value
-             								}
-             						  }
-             					}));
+                      //Fill dummy property to read it via method ...
+                      this._props.rowDetails = value;
+
+                     //inform the widget that another row was selected, in SAC we can then read the property rowDetails
+                     this.dispatchEvent(new Event("onSelectionChange", { }));
                  }
              });
 
-
-
-             this.addEventListener("VersionOpenPressed", event => {
-                 let detail = event.detail.buttonContext;
-                 let returnValue = "";
-
-                 //Loop Over Object to get only values into
-                 let index = 0;
-                 for (const [key, value] of Object.entries(detail)) {
-                   //we start not with a | , format: <field1>|<field2>|<field3>
-                       if ( index === 0 ){
-                           returnValue = value;
-                       } else {
-                           returnValue = returnValue + "|" + value;
-                       }
-                       index = index + 1;
-                 }
-
-             //change property rowDetails
-             this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                   detail: {
-                     properties: {
-                       rowDetails: returnValue
-                     }
-                   }
-               }
-             ));
-
-             //inform the widget that the version button was pressed, in SAC we can then read the property rowDetails
-             this.dispatchEvent(new Event("OpenVersionPress", { }));
-
-
-         });
-
-        this.addEventListener("VersionDeletePressed", event => {
-                    let detail = event.detail.buttonContext;
-                    let returnValue = "";
-
-                    //Loop Over Object to get only values into
-                    let index = 0;
-                    for (const [key, value] of Object.entries(detail)) {
-                      //we start not with a | , format: <field1>|<field2>|<field3>
-                          if ( index === 0 ){
-                              returnValue = value;
-                          } else {
-                              returnValue = returnValue + "|" + value;
-                          }
-                          index = index + 1;
-                    }
-
-                //change property rowDetails
-                this.dispatchEvent(new CustomEvent("propertiesChanged", {
-                      detail: {
-                        properties: {
-                          rowDetails: returnValue
-                        }
-                      }
-                  }
-                ));
-
-                //inform the widget that the version button was pressed, in SAC we can then read the property rowDetails
-                this.dispatchEvent(new Event("DeleteVersionPress", { }));
-
-          });
 
             //empty properties
             this._props = {};
@@ -342,9 +261,7 @@
           TreeTable.setVisibleRowCount(19);
         }
 
-
         addRow(NewRow){
-
           //here we get the new fields from SAC -> all fields are filled
           var channelNewRow = NewRow.l1;   //-> Top Node, Channel
           var lh4NewRow = NewRow.l2;   //-> Second Level, LH4
@@ -417,87 +334,14 @@
 
        }
 
-
-
-
-        deleteRow(RowToDelete){
-
-          //alternativly -> get selected row
-          let  TreeTable = window.globVar_UI5_Table
-
-          //check if a row is selected
-          let oSelectionIndex =  TreeTable.getSelectedIndex();
-          if ( oSelectionIndex > -1 ){
-              var oContext = TreeTable.getContextByIndex(TreeTable.getSelectedIndex());
-              var sPath = oContext.getPath();
-              var oSelRow = oContext.getProperty(sPath);
-
-
-              let oModel = TreeTable.getModel();
-              let oData = oModel.getData();
-
-              //Delete record from table
-            	for(var i=0; i<oData.TableData.length; i++){
-            			if(oData.TableData[i] == oSelRow ){
-            						oData.TableData.splice(i,1); //removing 1 record from i th index.
-            						oModel.refresh();
-            						break;//quit the loop
-            			}
-            	}
-              return "Line Deleted.";
-    	      } else {
-              return "NO line selected!";
-            }
-       }
-
-
-        getSelectedRow(){
-              let returnValue = "";
-              let  TreeTable = window.globVar_UI5_Table
-
-              //check if a row is selected
-              let oSelectionIndex =  TreeTable.getSelectedIndex();
-              if ( oSelectionIndex > -1 ){
-
-
-                var oContext = TreeTable.getContextByIndex(oSelectionIndex);
-
-                var sPath = oContext.getPath();
-                var oSelRow = oContext.getProperty(sPath);
-
-
-                //Loop Over Object to get only values into
-                let index = 0;
-                for (const [key, value] of Object.entries(oSelRow)) {
-                      //we start not with a | , format: <field1>|<field2>|<field3>
-                      if ( index === 0 ){
-                        returnValue = value;
-                      } else {
-                        returnValue = returnValue + "|" + value;
-                      }
-                      index = index + 1;
-                }
-                return returnValue;
-            } else {
-                return "no row selected!"
-            }
-        }
-
-
-      getRowfromPropertyObject(){
+      getCheckBoxRow(){
         debugger;
         let checkBoxChangedObject = this._props.checkBoxChanged;
         return checkBoxChangedObject ;
       }
 
 
-
-
-
-
-
-
-          // ---------------   other methods of the widget --------------------------------
+      // ---------------   other methods of the widget --------------------------------
 
 
 
@@ -642,19 +486,7 @@
                                        }));
                                    },
 
-                                   handleOpenVersionPress: function(oEvent) {
-                                   			//MessageToast.show("Details for product with id");
-                                        let buttonContext = oEvent.getSource().getBindingContext().getObject();
-                                        that.dispatchEvent(new CustomEvent("VersionOpenPressed", { detail: { buttonContext } } ));
-                                   },
-
-                                   handleDeleteVersionPress: function(oEvent) {
-                                   			//MessageToast.show("Details for product with id");
-                                        let buttonContext = oEvent.getSource().getBindingContext().getObject();
-                                        that.dispatchEvent(new CustomEvent("VersionDeletePressed", { detail: { buttonContext } } ));
-                                   },
-
-                                   handleVisibleRowChange: function(oEvent) {
+                                  handleVisibleRowChange: function(oEvent) {
                                      debugger;
                                    },
                                    onCollapseAll: function() {
