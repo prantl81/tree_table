@@ -68,10 +68,11 @@
             });
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
+
             _id = createGuid();
-
+            let check = _shadowRoot.querySelector("#oView").id;
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
-
+            let check2 = _shadowRoot.querySelector("#oView").id;
             this.$tableVisibleRowCount = _shadowRoot.querySelector("#TreeTable");
 
 
