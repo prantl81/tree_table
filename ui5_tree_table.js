@@ -33,8 +33,8 @@
                                 <m:Text text="{name}" wrapping="false" />
                              </template>
                           </Column>
-                          <Column width="25rem" sortProperty="name" filterProperty="name">
-                             <m:Label text="Customer" />
+                          <Column width="25rem" filterProperty="id">
+                             <m:Label text="" />
                              <template>
                                 <m:Text text="{id}" wrapping="false" />
                              </template>
