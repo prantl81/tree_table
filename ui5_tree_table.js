@@ -532,8 +532,9 @@
                });
 
                //Change visibleRowCount of viewContent
-               var newNumberRowsVisible= "visibleRowCount="+that_.$rowsVisible;
-               oView.mProperties.viewContent.replaceAll("visibleRowCount=\"=3\"", newNumberRowsVisible);
+               var var1= "visibleRowCount=";
+               var var2 = var1.concat('\"',that_.$rowsVisible,'\"');
+               oView.mProperties.viewContent.replaceAll("visibleRowCount=\"3\"", var2);
                //let check = oView.mProperties.viewContent.querySelector("TreeTable");
                //oView.mProperties.viewContent.querySelector("TreeTable").visibleRowCount = that_.$tableVisibleRowCount;
 
