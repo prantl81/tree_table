@@ -22,6 +22,13 @@
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
+                             <m:SegmentedButton selectedKey="2">
+					                        <m:items>
+						                            <m:SegmentedButtonItem text="1"  />
+						                            <m:SegmentedButtonItem text="2" key="2"/>
+						                            <m:SegmentedButtonItem text="3" />
+					                        </m:items>
+				                     </m:SegmentedButton>
                              <m:Button text="1" press="onCollapseLevel1" />
                              <m:Button text="2" press="onCollapseLevel2" />
                              <m:Button text="3" press="onCollapseLevel3" />
