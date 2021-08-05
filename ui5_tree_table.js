@@ -416,8 +416,9 @@
                 "sap/ui/thirdparty/jquery",
                 "sap/ui/model/Filter",
 	              "sap/ui/model/FilterOperator",
-                "sap/ui/model/FilterType"
-             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, Filter, FilterOperator, FilterType) {
+                "sap/ui/model/FilterType",
+                "sap/ui/core/Element"
+             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, Filter, FilterOperator, FilterType, Element) {
                 "use strict";
 
                 //Define and instantiate controller
