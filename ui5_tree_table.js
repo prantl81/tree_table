@@ -108,6 +108,10 @@
             //empty properties
             this._props = {};
 
+
+            //-> add loadthis here
+            loadthis(this);
+
           } //constructor
 
 
@@ -132,11 +136,11 @@
                 debugger;
               if ("rowsVisible" in changedProperties) {
                 this.$rowsVisible = changedProperties["rowsVisible"];
-                //
+                // --> check
               }
 
 
-              loadthis(this);
+              //loadthis(this);
 
 			        //this.render(20);
               this.dispatchEvent(new Event("handleVisibleRowChange", { }));
