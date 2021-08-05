@@ -553,9 +553,12 @@
 			                                  oTreeTable.expandToLevel(1);
 		                               },
 
-                                   onCollapseLevelChange: function() {
+                                   onCollapseLevelChange: function(oEvent) {
                                         debugger;
-                                        
+                                        oSelectedItemId = oSegmentedButton.getSelectedItem(),
+				                                oSelectedItem = Element.registry.get(oSelectedItemId),
+				                                oTextControl = this.byId('selectedItemPreview');
+
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
