@@ -106,8 +106,8 @@
 
              this.addEventListener("handleVisibleRowChange", event => {
                  debugger;
-                 let  TreeTable = this.byId('TreeTable');;
-                 TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
+                 //let  TreeTable = this.byId('TreeTable');
+                 //TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
             });
 
 
@@ -255,14 +255,14 @@
 
           // ---------------   Property Setter/Getter Functions
 
-          /* not implemented that way, we use the "propertiesChanged" event to let the Custom Widget SDK framework do the job
-          set rowDetails(newValue) {
-              this.rowDetails = newValue;
+          //not implemented that way, we use the "propertiesChanged" event to let the Custom Widget SDK framework do the job
+          set rowsVisible(newValue) {
+              this.$rowsVisible = newValue;
           }
 
 
-          get rowDetails() {
-              return this.this.rowDetails;
+          get rowsVisible() {
+              return this.this.$rowsVisible;
           }
           */
 
@@ -543,8 +543,6 @@
             });
 
 
-
-
             if (that_._designMode) {
                 //oView.byId("passwordInput").setEnabled(false);
             }
@@ -560,7 +558,6 @@
             return v.toString(16);
         });
     }
-
 
 
 })();
