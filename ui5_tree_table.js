@@ -136,11 +136,6 @@
 
 
               loadthis(this);
-              debugger;
-              let  oTreeTable = this.byId('TreeTable');
-              oTreeTable.setVisibleRowCount = this.$rowsVisible;
-
-
 
 			        //this.render(20);
               this.dispatchEvent(new Event("handleVisibleRowChange", { }));
@@ -329,6 +324,9 @@
             let channel = {"name": channelNewRow, "id": channelNewRowID, "flagEnabled": false, "spl": lh4};
             tableData.push(channel);
           }
+
+          debugger;
+          oTreeTable.setVisibleRowCount = this.$rowsVisible;
           oModel.refresh();
         }
 
