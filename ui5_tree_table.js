@@ -22,8 +22,9 @@
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
-                             <m:Button text="Collapse all" press="onCollapseAll" />
-                             <m:Button text="Expand first level" press="onExpandFirstLevel" />
+                             <m:Button text="1" press="onCollapseLevel1" />
+                             <m:Button text="2" press="onCollapseLevel2" />
+                             <m:Button text="3" press="onCollapseLevel3" />
                           </m:OverflowToolbar>
                        </extension>
                        <columns>
@@ -523,6 +524,19 @@
                                    onCollapseAll: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
 			                                  oTreeTable.collapseAll();
+		                               },
+
+                                   onCollapseLevel1: function() {
+			                                  var oTreeTable = this.byId("TreeTable");
+			                                  oTreeTable.expandToLevel(1);
+		                               },
+                                   onCollapseLevel2: function() {
+			                                  var oTreeTable = this.byId("TreeTable");
+			                                  oTreeTable.expandToLevel(2);
+		                               },
+                                   onCollapseLevel3: function() {
+			                                  var oTreeTable = this.byId("TreeTable");
+			                                  oTreeTable.expandToLevel(3);
 		                               },
 
 		                               onExpandFirstLevel: function() {
