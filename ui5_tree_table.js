@@ -528,15 +528,15 @@
 
                                    onCollapseLevel1: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
-			                                  oTreeTable.expandToLevel(1);
+			                                  oTreeTable.collapseAll();
 		                               },
                                    onCollapseLevel2: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
-			                                  oTreeTable.expandToLevel(2);
+			                                  oTreeTable.expandToLevel(1);
 		                               },
                                    onCollapseLevel3: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
-			                                  oTreeTable.expandToLevel(3);
+			                                  oTreeTable.expandToLevel(2);
 		                               },
 
 		                               onExpandFirstLevel: function() {
