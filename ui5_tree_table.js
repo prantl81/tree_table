@@ -104,6 +104,12 @@
                  }
              });
 
+             this.addEventListener("handleVisibleRowChange", event => {
+                 debugger;
+                 let  TreeTable = window.globVar_UI5_Table;
+ 
+            });
+
 
             //empty properties
             this._props = {};
