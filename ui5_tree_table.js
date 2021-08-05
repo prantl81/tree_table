@@ -22,7 +22,7 @@
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
-                             <m: Label text="Expand To Level" />
+                             <m:Label text="Expand To Level" />
                              <m:SegmentedButton selectedKey="2" id="SB1" selectionChange="onCollapseLevelChange">
 					                        <m:items>
 						                            <m:SegmentedButtonItem text="1"  />
