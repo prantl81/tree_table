@@ -111,7 +111,7 @@
              });
 
              this.addEventListener("handleVisibleRowChange", event => {
-                 debugger;
+
                  //let  TreeTable = this.byId('TreeTable');
                  //TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
             });
@@ -164,7 +164,7 @@
 
           // executed when this Web Component of the custom widget is connected to the HTML DOM of the web page.
           connectedCallback() {
-            debugger;
+
               try {
                   if (window.commonApp) {
                       let outlineContainer = commonApp.getShell().findElements(true, ele => ele.hasStyleClass && ele.hasStyleClass("sapAppBuildingOutline"))[0]; // sId: "__container0"
@@ -518,7 +518,7 @@
                                    },
 
                                   handleVisibleRowChange: function(oEvent) {
-                                     debugger;
+
                                    },
                                    onCollapseAll: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
@@ -531,18 +531,18 @@
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
-                                     debugger;
+
                                      let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
                                      that.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
 		                               },
 
                                    onFilter: function(oEvent){
-                                      debugger;
+
                                    },
 
                                    //Filter
                                    onSelection: function(oEvent){
-                                      debugger;
+
                                     }
 
 
