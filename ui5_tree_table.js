@@ -264,7 +264,7 @@
           get rowsVisible() {
               return this.this.$rowsVisible;
           }
-          */
+          
 
 
           // ---------------   "custom" methods of the widget --------------------------------
