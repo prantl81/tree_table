@@ -137,7 +137,7 @@
 
               loadthis(this);
               debugger;
-              let  oTreeTable = window.globVar_UI5_Table
+              let  oTreeTable = this.byId('TreeTable');
               oTreeTable.setVisibleRowCount = this.$rowsVisible;
 
 
