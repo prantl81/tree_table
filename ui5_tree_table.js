@@ -519,7 +519,8 @@
                                });
 
                 debugger;
-                _shadowRoot.getElementById('TreeTable').visibleRowCount = that_.$rowsVisible;
+                var check = _shadowRoot.getElementById('TreeTable');
+              //  _shadowRoot.getElementById('TreeTable').visibleRowCount = that_.$rowsVisible;
 
 
                //Instantiate and place the view
