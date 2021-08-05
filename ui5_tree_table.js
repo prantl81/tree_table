@@ -70,10 +70,7 @@
 
 
             _id = createGuid();
-            let check = _shadowRoot.querySelector("#oView");
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
-      
-            this.$tableVisibleRowCount = _shadowRoot.querySelector("#TreeTable");
 
 
             //-- Custom Widget - Events
@@ -533,6 +530,13 @@
                var oView  = sap.ui.xmlview({
                    viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
                });
+
+               //Change visibleRowCount of viewContent
+               let check = oView.mProperties.viewContent.querySelector("TreeTable");
+               oView.mProperties.viewContent.querySelector("TreeTable").visibleRowCount = that_.$tableVisibleRowCount;
+               
+
+
                oView.placeAt(content);
 
 
