@@ -18,7 +18,7 @@
                    <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="20" enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
                        <extension>
                           <m:OverflowToolbar style="Clear">
-                             <m:SearchField id="searchField" width="30%" placeholder="Search for Customer" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}">
+                             <m:SearchField id="searchField" width="30%" placeholder="Search" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}">
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
@@ -28,19 +28,25 @@
                        </extension>
                        <columns>
                           <Column width="25rem" filterProperty="name">
-                             <m:Label text="Customer" />
+                             <m:Label text="Account Name" />
                              <template>
                                 <m:Text text="{name}" wrapping="false" />
                              </template>
                           </Column>
                           <Column width="25rem" filterProperty="id">
-                             <m:Label text="" />
+                             <m:Label text="Account ID" />
                              <template>
                                 <m:Text text="{id}" wrapping="false" />
                              </template>
                           </Column>
                           <Column  hAlign="Center">
-                              <m:Label text="Flag" />
+                              <m:Label text="SPL A" />
+                              <template>
+                                  <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
+                              </template>
+                          </Column>
+                          <Column  hAlign="Center">
+                              <m:Label text="SPL B" />
                               <template>
                                   <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
                               </template>
