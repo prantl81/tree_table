@@ -532,10 +532,12 @@
 		                               },
                                    onCollapseLevel2: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
+                                        oTreeTable.collapseAll();
 			                                  oTreeTable.expandToLevel(1);
 		                               },
                                    onCollapseLevel3: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
+                                        oTreeTable.collapseAll();
 			                                  oTreeTable.expandToLevel(2);
 		                               },
 
