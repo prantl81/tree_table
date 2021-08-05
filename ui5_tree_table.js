@@ -122,6 +122,10 @@
               }
               //merged with the properties of the _props object. Thus, _props contains the state of all properties before the update
               this._props = { ...this._props, ...changedProperties };
+
+              let  oTreeTable = window.globVar_UI5_Table
+              oTreeTable.setVisibleRowCount = this.$rowsVisible;
+              
           }
 
 
@@ -444,9 +448,6 @@
                                          window.globVar_UI5_Table = this.byId('TreeTable');
                                          var oTreeTable = this.byId("TreeTable");
  			                                   oTreeTable.expandToLevel(1);
-                                         debugger;
-                                         oTreeTable.setVisibleRowCount = that_.$rowsVisible;
-                                        // oTreeTable.setVisibleRowCount = 15;
                                    },
 
                                    onSearch : function () {
