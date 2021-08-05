@@ -129,9 +129,10 @@
 
           // executed after the properties of the custom widget have been updated.
           onCustomWidgetAfterUpdate(changedProperties) {
-
+                debugger;
               if ("rowsVisible" in changedProperties) {
                 this.$rowsVisible = changedProperties["rowsVisible"];
+                //
               }
 
 
@@ -147,6 +148,7 @@
 
           // executed when this Web Component of the custom widget is connected to the HTML DOM of the web page.
           connectedCallback() {
+            debugger;
               try {
                   if (window.commonApp) {
                       let outlineContainer = commonApp.getShell().findElements(true, ele => ele.hasStyleClass && ele.hasStyleClass("sapAppBuildingOutline"))[0]; // sId: "__container0"
