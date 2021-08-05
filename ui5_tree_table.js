@@ -1,7 +1,7 @@
 (function() {
     let _shadowRoot;
     let _id;
-    window.globVar_UI5_Table = "test";
+    window.globVar_UI5_Table = "";
 
     let tmpl = document.createElement("template");
     tmpl.innerHTML = `
@@ -106,7 +106,7 @@
 
              this.addEventListener("handleVisibleRowChange", event => {
                  debugger;
-                 let  TreeTable = window.globVar_UI5_Table;
+                 let  TreeTable = this.byId('TreeTable');;
                  TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
             });
 
@@ -139,12 +139,10 @@
 
           // executed after the properties of the custom widget have been updated.
           onCustomWidgetAfterUpdate(changedProperties) {
-                debugger;
               if ("rowsVisible" in changedProperties) {
                 this.$rowsVisible = changedProperties["rowsVisible"];
                   //Event to handle
                   this.dispatchEvent(new Event("handleVisibleRowChange", { }));
-
               }
 
 
@@ -541,8 +539,6 @@
                });
 
                oView.placeAt(content);
-
-
 
             });
 
