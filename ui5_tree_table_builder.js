@@ -49,5 +49,5 @@
     		}
     	}
 
-    	customElements.define("tp-sac-tree-table-ui5-builder", ui5TreeTableBuilder);
+    	customElements.define("rb-sac-tree-table-ui5-builder", ui5TreeTableBuilder);
     })();

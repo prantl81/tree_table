@@ -1,25 +1,25 @@
 {
-	"id": "tp.sac.tree.table.ui5",
+	"id": "rb.sac.tree.table.ui5",
 	"version": "0.0.2",
-	"name": "treeTable",
-	"description": "UI5 Tree Table",
-	"newInstancePrefix": "treeTable",
+	"name": "cpmSplMaintenance",
+	"description": "CPM SPL Maintenance",
+	"newInstancePrefix": "cpmSplMaintenance",
 	"icon": "https://prantl81.github.io/ui5_tree_table/icon.png",
-	"vendor": "Red Bull GmbH",
+	"vendor": "none",
 	"eula": "",
 	"license": "",
 	"imports": [""],
 	  "webcomponents": [
     {
       "kind": "main",
-      "tag": "tp-sac-tree-table-ui5",
+      "tag": "rb-sac-tree-table-ui5",
       "url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
 		{
 			"kind": "builder",
-			"tag": "tp-sac-tree-table-ui5-builder",
+			"tag": "rb-sac-tree-table-ui5-builder",
 			"url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table_builder.js",
 			"integrity": "",
 			"ignoreIntegrity": true

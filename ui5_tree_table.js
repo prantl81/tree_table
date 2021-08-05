@@ -264,7 +264,7 @@
           get rowsVisible() {
               return this.this.$rowsVisible;
           }
-          
+
 
 
           // ---------------   "custom" methods of the widget --------------------------------
@@ -365,7 +365,7 @@
 
     // ----------------END class Ui5CustTable extends HTMLElement----------------
 
-    customElements.define("tp-sac-tree-table-ui5", Ui5TreeTable);
+    customElements.define("rb-sac-tree-table-ui5", Ui5TreeTable);
 
     // ---------------- UTILS -------------------------------------------------
     function loadthis(that) {
