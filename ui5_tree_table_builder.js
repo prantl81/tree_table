@@ -41,7 +41,7 @@
     		}
 
     		set rowsVisible(newNumberRowsVisble) {
-    			this._shadowRoot.getElementById("rowsVisible").value = newNumberRowsVisible;
+    			this._shadowRoot.getElementById("$rowsVisible").value = newNumberRowsVisible;
     		}
 
     		get rowsVisible() {
