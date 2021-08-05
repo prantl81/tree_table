@@ -15,7 +15,7 @@
            <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
               <m:Page showHeader="false" enableScrolling="false">
                  <m:content>
-                   <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount=rowsVisibleVariable enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
+                   <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="5" enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
                        <extension>
                           <m:OverflowToolbar style="Clear">
                              <m:SearchField id="searchField" width="30%" placeholder="Search for Customer" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}">
@@ -79,8 +79,6 @@
                 let detail = event.detail.checkBoxContext;
                 let returnValue = "";
 
-                debugger;
-
                 //Fill dummy property to read it via method getCheckBoxRow
                 this._props.checkBoxChanged = detail;
 
@@ -138,7 +136,6 @@
 
               loadthis(this);
 
-              debugger;
 			        //this.render(20);
               this.dispatchEvent(new Event("handleVisibleRowChange", { }));
               //window.globVar_UI5_Table.visibleRowCount=11;
@@ -341,7 +338,6 @@
        }
 
       getCheckBoxRow(){
-        debugger;
         let checkBoxChangedObject = this._props.checkBoxChanged;
         return checkBoxChangedObject ;
       }
@@ -450,7 +446,6 @@
                                    },
 
                                    onSearch : function () {
-                                          debugger;
 			                                  var oView = this.getView(),
 				                                sValue = oView.byId("searchField").getValue(),
 				                                oFilter = new Filter("name", FilterOperator.Contains, sValue);
@@ -458,7 +453,6 @@
                                         oView.byId("TreeTable").getBinding("rows").expandToLevel(3);
 		                                    },
                                    onSuggest: function(event) {
-                                          debugger;
                                           var sValue = event.getParameter("suggestValue"),
       		                                  aFilters = [];
                                             if (sValue) {
@@ -523,6 +517,9 @@
 
 
                                });
+
+                debugger;
+                _shadowRoot.getElementById('TreeTable').visibleRowCount = that_.$rowsVisible;
 
 
                //Instantiate and place the view
