@@ -278,11 +278,22 @@
           //here we get the new fields from SAC -> all fields are filled
           var channelNewRow   = NewRow.l1;   //-> Top Node, Channel
           var channelNewRowID = NewRow.l1Id;
+
           var lh4NewRow = NewRow.l2;   //-> Second Level, LH4
           var lh4NewRowID = NewRow.l2Id;   //-> Second Level, LH4
+          var lh4Flag =  NewRow.l2Flag;
+
           var mplNewRow = NewRow.l3;   //-> MPL, details
           var mplNewRowID = NewRow.l3Id;   //-> MPL, details
           var splFlagNewRow = NewRow.flag;   //-> SPL flag (X = true/ "" = false)
+
+          var lh4FlagBoolean = true;
+          if ( lh4Flag === "X" ) {
+             lh4FlagBoolean = true;
+          } else {
+             lh4FlagBoolean = false;
+          }
+
 
           //Map SPL Flag X to true or empty to false
           var splFlagBoolean = true;
@@ -326,13 +337,13 @@
               } else {
                 // new LH4 node added to existing channel
                 let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled": true, "spl": mpl};
+                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled": true, "spl_flag": lh4FlagBoolean, "spl": mpl};
                 tableData[channel_index].spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
             let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": true, "spl": mpl}];
+            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": true, "spl_flag": lh4FlagBoolean, "spl": mpl}];
             let channel = {"name": channelNewRow, "id": channelNewRowID, "flagEnabled": false, "spl": lh4};
             tableData.push(channel);
           }
