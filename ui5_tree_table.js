@@ -136,6 +136,8 @@
 
               loadthis(this);
 
+
+
 			        //this.render(20);
               this.dispatchEvent(new Event("handleVisibleRowChange", { }));
               //window.globVar_UI5_Table.visibleRowCount=11;
@@ -442,6 +444,8 @@
                                          window.globVar_UI5_Table = this.byId('TreeTable');
                                          var oTreeTable = this.byId("TreeTable");
  			                                   oTreeTable.expandToLevel(1);
+                                         debugger;
+                                         oTreeTable.setVisibleRowCount = this.$rowsVisible;
                                         // oTreeTable.setVisibleRowCount = 15;
                                    },
 
@@ -518,26 +522,12 @@
 
                                });
 
-                debugger;
-                var check = _shadowRoot.getElementById('TreeTable');
-              //  _shadowRoot.getElementById('TreeTable').visibleRowCount = that_.$rowsVisible;
-
-
+            
                //Instantiate and place the view
                //### THE APP: place the XMLView somewhere into DOM ###
                var oView  = sap.ui.xmlview({
                    viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
                });
-
-               //Change visibleRowCount of viewContent
-               var xml = oView.mProperties.viewContent;
-               xml.replace('rowsVisibleVariable',that_.$rowsVisible);
-               //oView.mProperties.viewContent.replaceAll('$rowsVisibleVariable', that_.$rowsVisible);
-
-               //let check = oView.mProperties.viewContent.querySelector("TreeTable");
-               //oView.mProperties.viewContent.querySelector("TreeTable").visibleRowCount = that_.$tableVisibleRowCount;
-
-
 
                oView.placeAt(content);
 
