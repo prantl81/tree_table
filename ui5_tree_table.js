@@ -445,7 +445,7 @@
                                          var oTreeTable = this.byId("TreeTable");
  			                                   oTreeTable.expandToLevel(1);
                                          debugger;
-                                         oTreeTable.setVisibleRowCount = this.$rowsVisible;
+                                         oTreeTable.setVisibleRowCount = that_.$rowsVisible;
                                         // oTreeTable.setVisibleRowCount = 15;
                                    },
 
@@ -522,7 +522,7 @@
 
                                });
 
-            
+
                //Instantiate and place the view
                //### THE APP: place the XMLView somewhere into DOM ###
                var oView  = sap.ui.xmlview({
