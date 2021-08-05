@@ -22,7 +22,7 @@
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
-                             <m:SegmentedButton selectedKey="2">
+                             <m:SegmentedButton selectedKey="2" id="SB1" selectionChange="onCollapseLevelChange">
 					                        <m:items>
 						                            <m:SegmentedButtonItem text="1"  />
 						                            <m:SegmentedButtonItem text="2" key="2"/>
@@ -551,6 +551,11 @@
 		                               onExpandFirstLevel: function() {
 			                                  var oTreeTable = this.byId("TreeTable");
 			                                  oTreeTable.expandToLevel(1);
+		                               },
+
+                                   onCollapseLevelChange: function() {
+                                        debugger;
+                                        
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
