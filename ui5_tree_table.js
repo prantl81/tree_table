@@ -555,12 +555,21 @@
 		                               },
 
                                    onCollapseLevelChange: function(oEvent) {
-                                        debugger;
-                                    var oSegmentedButton = this.byId('SB1'),
-                                        oSelectedItemId = oSegmentedButton.getSelectedItem(),
-				                                oSelectedItem = Element.registry.get(oSelectedItemId),
-				                                oTextControl = this.byId('selectedItemPreview');
+                                    var level = oEvent.mParameters.item.mProperties.text;
+                                    var oTreeTable = this.byId("TreeTable");
+                                    oTreeTable.collapseAll();
 
+                                    switch(level){
+                                    case "1":
+                                            break;
+                                    case "2":
+                                            oTreeTable.expandToLevel(1);
+                                            break;
+                                    case "3":
+                                            oTreeTable.expandToLevel(2);
+                                            break;
+                                    }
+                                  
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
