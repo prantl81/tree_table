@@ -326,7 +326,8 @@
           }
 
           debugger;
-          oTreeTable.setVisibleRowCount = this.$rowsVisible;
+          //oTreeTable.setVisibleRowCount = this.$rowsVisible;
+          oTreeTable.mProperties.visibleRowCount = this.$rowsVisible;
           oModel.refresh();
         }
 
