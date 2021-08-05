@@ -107,7 +107,7 @@
              this.addEventListener("handleVisibleRowChange", event => {
                  debugger;
                  let  TreeTable = window.globVar_UI5_Table;
- 
+                 TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
             });
 
 
@@ -142,14 +142,16 @@
                 debugger;
               if ("rowsVisible" in changedProperties) {
                 this.$rowsVisible = changedProperties["rowsVisible"];
-                // --> check
+                  //Event to handle
+                  this.dispatchEvent(new Event("handleVisibleRowChange", { }));
+
               }
 
 
               //loadthis(this);
 
 			        //this.render(20);
-              this.dispatchEvent(new Event("handleVisibleRowChange", { }));
+
               //window.globVar_UI5_Table.visibleRowCount=11;
 
           }
@@ -337,9 +339,6 @@
             tableData.push(channel);
           }
 
-          debugger;
-          oTreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
-          //oTreeTable.mProperties.visibleRowCount = this.$rowsVisible;
           oModel.refresh();
         }
 
