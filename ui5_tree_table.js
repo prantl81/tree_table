@@ -533,7 +533,7 @@
 
                //Change visibleRowCount of viewContent
                var xml = oView.mProperties.viewContent;
-               xml.replace(/rowsVisibleVariable/g,that_.$rowsVisible);
+               xml.replace(rowsVisibleVariable,that_.$rowsVisible);
                //oView.mProperties.viewContent.replaceAll('$rowsVisibleVariable', that_.$rowsVisible);
 
                //let check = oView.mProperties.viewContent.querySelector("TreeTable");
