@@ -22,6 +22,7 @@
                                 <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                              </m:SearchField>
                              <m:ToolbarSpacer />
+                             <m: Label text="Expand To Level" />
                              <m:SegmentedButton selectedKey="2" id="SB1" selectionChange="onCollapseLevelChange">
 					                        <m:items>
 						                            <m:SegmentedButtonItem text="1"  />
@@ -29,9 +30,6 @@
 						                            <m:SegmentedButtonItem text="3" />
 					                        </m:items>
 				                     </m:SegmentedButton>
-                             <m:Button text="1" press="onCollapseLevel1" />
-                             <m:Button text="2" press="onCollapseLevel2" />
-                             <m:Button text="3" press="onCollapseLevel3" />
                           </m:OverflowToolbar>
                        </extension>
                        <columns>
@@ -529,53 +527,28 @@
                                   handleVisibleRowChange: function(oEvent) {
 
                                    },
-                                   onCollapseAll: function() {
-			                                  var oTreeTable = this.byId("TreeTable");
-			                                  oTreeTable.collapseAll();
-		                               },
-
-                                   onCollapseLevel1: function() {
-			                                  var oTreeTable = this.byId("TreeTable");
-			                                  oTreeTable.collapseAll();
-		                               },
-                                   onCollapseLevel2: function() {
-			                                  var oTreeTable = this.byId("TreeTable");
-                                        oTreeTable.collapseAll();
-			                                  oTreeTable.expandToLevel(1);
-		                               },
-                                   onCollapseLevel3: function() {
-			                                  var oTreeTable = this.byId("TreeTable");
-                                        oTreeTable.collapseAll();
-			                                  oTreeTable.expandToLevel(2);
-		                               },
-
-		                               onExpandFirstLevel: function() {
-			                                  var oTreeTable = this.byId("TreeTable");
-			                                  oTreeTable.expandToLevel(1);
-		                               },
 
                                    onCollapseLevelChange: function(oEvent) {
-                                    var level = oEvent.mParameters.item.mProperties.text;
-                                    var oTreeTable = this.byId("TreeTable");
-                                    oTreeTable.collapseAll();
+                                      var level = oEvent.mParameters.item.mProperties.text;
+                                      var oTreeTable = this.byId("TreeTable");
+                                      oTreeTable.collapseAll();
 
-                                    switch(level){
-                                    case "1":
-                                            break;
-                                    case "2":
-                                            oTreeTable.expandToLevel(1);
-                                            break;
-                                    case "3":
-                                            oTreeTable.expandToLevel(2);
-                                            break;
-                                    }
-                                  
+                                          switch(level){
+                                                          case "1":
+                                                                  break;
+                                                          case "2":
+                                                                  oTreeTable.expandToLevel(1);
+                                                                  break;
+                                                          case "3":
+                                                                  oTreeTable.expandToLevel(2);
+                                                                  break;
+                                                        }
+
 		                               },
 
                                    onCheckBoxSelect: function(oEvent) {
-
-                                     let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
-                                     that.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
+                                       let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
+                                       that.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
 		                               },
 
                                    onFilter: function(oEvent){
