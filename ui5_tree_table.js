@@ -280,8 +280,8 @@
              splFlagBoolean = false;
           }
 
-          var TreeTable = window.globVar_UI5_Table;
-          var oModel = TreeTable.getModel();
+          var oTreeTable = window.globVar_UI5_Table;
+          var oModel = oTreeTable.getModel();
           var oData = oModel.getData();
           var tableData = oData.spl;
 
