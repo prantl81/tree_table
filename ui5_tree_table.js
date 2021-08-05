@@ -555,6 +555,7 @@
 
                                    onCollapseLevelChange: function(oEvent) {
                                         debugger;
+                                    var oSegmentedButton = this.byId('SB1'),
                                         oSelectedItemId = oSegmentedButton.getSelectedItem(),
 				                                oSelectedItem = Element.registry.get(oSelectedItemId),
 				                                oTextControl = this.byId('selectedItemPreview');
