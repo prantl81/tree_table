@@ -361,10 +361,11 @@
                                 oView.placeAt(content);
 
 
-              });
+              }.bind(this) );
 
 
-          });
+          }.bind(this) 
+        );
 
 
       }
