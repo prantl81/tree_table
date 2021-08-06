@@ -26,18 +26,18 @@
     			super();
     			this._shadowRoot = this.attachShadow({mode: "open"});
     			this._shadowRoot.appendChild(template.content.cloneNode(true));
-    			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-    		}
+    			
+				//Hook up events of controls to external events
+				this._shadowRoot.getElementById("builder_rowsVisible").addEventListener("change", function(e) {
+						this.dispatchEvent(new CustomEvent("propertiesChanged", {
+								detail: {
+									properties: {
+										rowsVisible: this.rowsVisible
+									}
+								}
+						}));
+					}.bind(this));
 
-    		_submit(e) {
-    			e.preventDefault();
-    			this.dispatchEvent(new CustomEvent("propertiesChanged", {
-    					detail: {
-    						properties: {
-    							rowsVisible: this.rowsVisible
-    						}
-    					}
-    			}));
     		}
 
     		set rowsVisible(newNumberRowsVisible) {
@@ -47,6 +47,7 @@
     		get rowsVisible() {
     			return this._shadowRoot.getElementById("builder_rowsVisible").value;
     		}
+			
     	}
 
     	customElements.define("rb-sac-tree-table-ui5-builder", ui5TreeTableBuilder);

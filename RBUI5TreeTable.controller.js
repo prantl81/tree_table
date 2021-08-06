@@ -71,6 +71,7 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                             var oData = { "spl": []};
                         }
 
+                        oData.visibleRowCount = 5;
 
                         var oModel = new JSONModel(oData);
                         this.getView().setModel(oModel);
@@ -147,6 +148,10 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                                                   break;
                                         }
 
+                   },
+
+                   setVisibleRowCount(newRowCount) {
+                      this.getView().getModel().setProperty("/visibleRowCount", newRowCount);
                    },
 
                    onCheckBoxSelect: function(oEvent) {

@@ -13,14 +13,14 @@
     {
       "kind": "main",
       "tag": "rb-sac-tree-table-ui5",
-      "url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table.js",
+      "url": "https://127.0.0.1:8080/ui5_tree_table.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
 		{
 			"kind": "builder",
 			"tag": "rb-sac-tree-table-ui5-builder",
-			"url": "https://prantl81.github.io/ui5_tree_table/ui5_tree_table_builder.js",
+			"url": "https://127.0.0.1:8080/ui5_tree_table_builder.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}

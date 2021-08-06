@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "https://redbull-q.eu10.sapanalytics.cloud/sap/fpa/ui/tenants/f5e29/app.html#/analyticapp&/aa/72201F84408F3E3698028A5CF4ED9A9A/?url_api=true&mode=present&view_id=appBuilding",
+            "pathMapping": {
+                        "https://127.0.0.1:8080/": "${workspaceRoot}" 
+            },
+            "runtimeArgs": ["--ignore-certificate-errors"]
+        }
+    ]
+}

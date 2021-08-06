@@ -29,46 +29,10 @@
 
 
 
-            //-- Custom Widget - Events
-
-          /*  this.addEventListener("onCheckBoxChange_UI5_event", event => {
-                let detail = event.detail.checkBoxContext;
-                let returnValue = "";
-
-                //Fill dummy property to read it via method getCheckBoxRow
-                this._props.checkBoxChanged = detail;
-
-            //inform the widget that the version button was pressed, in SAC we can then read the property rowDetails
-            this.dispatchEvent(new Event("onCheckBoxChange", { }));
-
-          });*/
-
-/*
-           this.addEventListener("click", event => {
-                 console.log('click');
-                 let  TreeTable = window.globVar_UI5_Table
-                 let oSelectionIndex =  TreeTable.getSelectedIndex();
-                 if ( oSelectionIndex > -1 ){
-             					let context = TreeTable.getContextByIndex(oSelectionIndex);
-             					let value = context.getProperty("ProductId");
-
-                      //Fill dummy property to read it via method ...
-                      this._props.rowDetails = value;
-
-                     //inform the widget that another row was selected, in SAC we can then read the property rowDetails
-                     this.dispatchEvent(new Event("onSelectionChange", { }));
-                 }
-             });
-*/
-          /*   this.addEventListener("handleVisibleRowChange", event => {
-
-                 //let  TreeTable = this.byId('TreeTable');
-                 //TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
-            });
-*/
-
             //empty properties
-            this._props = {};
+            this.properties = {};
+            //empty selection state
+            this.selectionState = {};
 
 
             //Initialize the UI5 component(s)
@@ -78,9 +42,9 @@
 
           fireEventCheckBoxChange(selectionDetails) {
               console.log("Event fire: CheckBoxChange");
-              //console.log(selectionDetails);
+              console.log(selectionDetails);
               //Store the rowDetails
-              this._props.checkBoxChanged = selectionDetails;
+              this.selectionState.checkBoxChanged = selectionDetails;
               //Dispatch event towards SAC
               this.dispatchEvent(new Event("onCheckBoxChange", { }));
           }
@@ -94,22 +58,13 @@
               if ("designMode" in changedProperties) {
                   this._designMode = changedProperties["designMode"];
               }
-              //merged with the properties of the _props object. Thus, _props contains the state of all properties before the update
-              this._props = { ...this._props, ...changedProperties };
-
+              
           }
 
 
 
           // executed after the properties of the custom widget have been updated.
           onCustomWidgetAfterUpdate(changedProperties) {
-            if ("rowsVisible" in changedProperties) {
-              this.$rowsVisible = changedProperties["rowsVisible"];
-                //Event to handle
-                this.dispatchEvent(new Event("handleVisibleRowChange", { }));
-            }
-
-
 
           }
 
@@ -216,23 +171,41 @@
 
           //not implemented that way, we use the "propertiesChanged" event to let the Custom Widget SDK framework do the job
           set rowsVisible(newValue) {
-              this.$rowsVisible = newValue;
+              this.properties.rowsVisible = parseInt(newValue);
+              this.syncProperties("rowsVisible");
+              
+          }
+
+          get rowsVisible() {
+              return this.properties.rowsVisible;
           }
 
 
-          get rowsVisible() {
-              return this.this.$rowsVisible;
+
+
+
+
+          //Utility method to push properties to UI5 control
+          // - without parameter -> push all properties
+          // - with parameter -> push single proprty
+          syncProperties(property) {
+              //Controller not avialable yet - do nothing
+              if (!this.controller) {
+                return;
+              }
+
+              if (!property || property == "rowsVisible") {
+                  this.controller.setVisibleRowCount(this.properties.rowsVisible);
+              }
+
           }
 
 
 
           // ---------------   "custom" methods of the widget --------------------------------
 
-        render(numberVisibleRows) {
-          var TreeTable = this.byId('TreeTable');
-          TreeTable.setVisibleRowCount(19);
-        }
 
+        //SAC method
         addRow(NewRow){
           //here we get the new fields from SAC -> all fields are filled
           var channelNewRow   = NewRow.l1;   //-> Top Node, Channel
@@ -310,6 +283,7 @@
           oModel.refresh();
         }
 
+        //SAC method
         removeAllRows(){
 
           var TreeTable = window.globVar_UI5_Table;
@@ -321,8 +295,9 @@
 
        }
 
+      //SAC method
       getCheckBoxRow(){
-        let checkBoxChangedObject = this._props.checkBoxChanged;
+        let checkBoxChangedObject = this.selectionState.checkBoxChanged;
         return checkBoxChangedObject ;
       }
 
@@ -340,7 +315,7 @@
             "use strict";
 
             sap.ui.loader.config( {
-                paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
+                paths: { 'com/evosight/sacwidgets/redbull': 'https://127.0.0.1:8080/' }
             } );
 
             //Require the controller class and all other dependencies
@@ -352,6 +327,7 @@
                                 var oController = new RBUI5TreeTable();
 
                                 oController.connectWidget(this);
+                                this.controller = oController;
 
                                 //Instantiate the view
                                 //### THE APP: place the XMLView somewhere into DOM ###
@@ -362,6 +338,8 @@
 
                                 //Place the view
                                 oView.placeAt(content);
+
+                                this.syncProperties();
 
 
               }.bind(this) );

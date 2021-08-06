@@ -1,0 +1,20 @@
+{
+  "name": "ui5_tree_table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ui5_tree_table.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx http-server --ssl --cors ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prantl81/ui5_tree_table.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prantl81/ui5_tree_table/issues"
+  },
+  "homepage": "https://github.com/prantl81/ui5_tree_table#readme"
+}
