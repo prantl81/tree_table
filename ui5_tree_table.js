@@ -388,6 +388,8 @@
 
     // ----------------END class Ui5CustTable extends HTMLElement----------------
 
+
+    //Register custom element with tag name
     customElements.define("rb-sac-tree-table-ui5", Ui5TreeTable);
 
     // ---------------- UTILS -------------------------------------------------
@@ -410,12 +412,19 @@
                             ], function(RBUI5TreeTable) {
                                 //Conteroller and dependecies are available
 
-                                //Instantiate and place the view
+                                debugger;
+
+                                var oController = new RBUI5TreeTable();
+
+                                //Instantiate the view
                                 //### THE APP: place the XMLView somewhere into DOM ###
                                 var oView  = sap.ui.xmlview({
+                                    viewName: 'RBUI5TreeTable',
                                     viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+                                    controller: oController
                                 });
 
+                                //Place the view
                                 oView.placeAt(content);
 
 
