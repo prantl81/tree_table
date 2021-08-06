@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="com.evosight.sacwidgets.redbull.RBUI5TreeTable" height="100%">
+    <m:Page showHeader="false" enableScrolling="false">
+       <m:content>
+         <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="25" enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
+             <extension>
+                <m:OverflowToolbar style="Clear">
+                   <m:SearchField id="searchField" width="30%" placeholder="Search" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}">
+                      <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
+                   </m:SearchField>
+                   <m:ToolbarSpacer />
+                   <m:Label text="Expand To Level" />
+                   <m:SegmentedButton selectedKey="2" id="SB1" selectionChange="onCollapseLevelChange">
+                        <m:items>
+                              <m:SegmentedButtonItem text="1"  />
+                              <m:SegmentedButtonItem text="2" key="2"/>
+                              <m:SegmentedButtonItem text="3" />
+                        </m:items>
+                   </m:SegmentedButton>
+                </m:OverflowToolbar>
+             </extension>
+             <columns>
+                <Column width="25rem" filterProperty="name">
+                   <m:Label text="Account Name" />
+                   <template>
+                      <m:Text text="{name}" wrapping="false" />
+                   </template>
+                </Column>
+                <Column width="25rem" filterProperty="id">
+                   <m:Label text="Account ID" />
+                   <template>
+                      <m:Text text="{id}" wrapping="false" />
+                   </template>
+                </Column>
+                <Column  hAlign="Center">
+                    <m:Label text="SPL A" />
+                    <template>
+                        <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
+                    </template>
+                </Column>
+                <Column  hAlign="Center">
+                    <m:Label text="SPL B" />
+                    <template>
+                        <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
+                    </template>
+                </Column>
+             </columns>
+          </TreeTable>
+       </m:content>
+    </m:Page>
+ </mvc:View>

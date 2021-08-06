@@ -415,13 +415,13 @@
                                 debugger;
 
                                 var oController = new RBUI5TreeTable();
-                                
+
                                 oController.connectWidget(customElement);
 
                                 //Instantiate the view
                                 //### THE APP: place the XMLView somewhere into DOM ###
                                 var oView  = sap.ui.xmlview({
-                                    viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+                                    viewName: 'com.evosight.sacwidgets.redbull.RBUI5TreeTable',
                                     controller: oController
                                 });
 

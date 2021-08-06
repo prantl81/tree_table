@@ -23,12 +23,12 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                    connectWidget: function(widget) {
                      this.widget = widget;
 
-                     debugger;
+
                    },
 
                    onInit: function() {
 
-                     debugger;
+                     
 
                        if (this.widget._designMode) {
                            //In design mode show demo data
