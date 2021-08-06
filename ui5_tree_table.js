@@ -12,7 +12,7 @@
         </div>
         <?xml version="1.0" encoding="UTF-8"?>
         <script id="oView" name="oView" type="sapui5/xmlview">
-           <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="myView.Template" height="100%">
+           <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:core="sap.ui.core" xmlns:dnd="sap.ui.core.dnd" xmlns:m="sap.m" xmlns:u="sap.ui.unified" controllerName="RBUI5TreeTable" height="100%">
               <m:Page showHeader="false" enableScrolling="false">
                  <m:content>
                    <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="25" enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
@@ -420,7 +420,7 @@
                 "use strict";
 
                 //Define and instantiate controller
-                var controller = Controller.extend("myView.Template", {
+                var controller = Controller.extend("RBUI5TreeTable", {
                                    onInit: function() {
 
                                      if (that._firstConnection === 0) {
