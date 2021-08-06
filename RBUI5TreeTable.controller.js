@@ -20,6 +20,11 @@ sap.ui.define([
 
 return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
+                   constructur(customElement) {
+                     this.customElement = customElement;
+                     alert('Hey');
+                   },
+
                    onInit: function() {
 
                        if (that_._designMode) {

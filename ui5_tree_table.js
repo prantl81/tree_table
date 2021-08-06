@@ -393,11 +393,11 @@
     customElements.define("rb-sac-tree-table-ui5", Ui5TreeTable);
 
     // ---------------- UTILS -------------------------------------------------
-    function loadthis(that) {
+    function loadthis(customElement) {
 
         let content = document.createElement('div');
         content.slot = "content";
-        that.appendChild(content);
+        customElement.appendChild(content);
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
@@ -414,11 +414,11 @@
 
                                 debugger;
 
-                                var oController = new RBUI5TreeTable();
+                                var oController = new RBUI5TreeTable(customElement);
 
                                 //Instantiate the view
                                 //### THE APP: place the XMLView somewhere into DOM ###
-                                var oView  = sap.ui.xmlview({                                    
+                                var oView  = sap.ui.xmlview({
                                     viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
                                     controller: oController
                                 });
