@@ -28,8 +28,8 @@
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
 
-            _id = createGuid();
-            _shadowRoot.querySelector("#oView").id = _id + "_oView";
+            //_id = createGuid();
+            //_shadowRoot.querySelector("#oView").id = _id + "_oView";
 
 
             //-- Custom Widget - Events
