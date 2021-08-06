@@ -403,8 +403,7 @@
 
             sap.ui.loader.config( {
                 paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
-            } );
-            alert(sap.ui.require.toUrl("com/evosight/sacwidgets"));
+            } );            
 
             //### Controller ###
             sap.ui.require([
