@@ -407,7 +407,7 @@
             } );
 
 
-            sap.ui.require(['com/evosight/sacwidgets/redbull/RBUI5TreeTable'], function(RBUI5TreeTable) {
+            sap.ui.require(['com/evosight/sacwidgets/redbull/RBUI5TreeTable.controller'], function(RBUI5TreeTable) {
 
                 console.log("Hello world");
                 console.log(RBUI5TreeTable);
