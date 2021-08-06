@@ -401,6 +401,7 @@
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
+            debugger;
             sap.ui.loader.config( {
                 paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
             } );
