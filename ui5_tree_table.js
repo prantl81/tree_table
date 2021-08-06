@@ -78,7 +78,7 @@
 
           fireEventCheckBoxChange(selectionDetails) {
               console.log("Event fire: CheckBoxChange");
-              console.log(selectionDetails);
+              //console.log(selectionDetails);
               //Store the rowDetails
               this._props.checkBoxChanged = selectionDetails;
               //Dispatch event towards SAC
