@@ -401,8 +401,10 @@
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
-
-            sap.ui.loader.config.paths[ 'com/evosight/sacwidgets/redbull' ] = "https://prantl81.github.io/ui5_tree_table/";
+            sap.ui.loader.config( {
+                paths { 'com/evosight/sacwidgets': 'https://prantl81.github.io/ui5_tree_table/' }
+            } );
+            alert(sap.ui.require.toUrl("com/evosight/sacwidgets"));
 
             //### Controller ###
             sap.ui.require([
