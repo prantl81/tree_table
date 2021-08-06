@@ -403,12 +403,15 @@
 
             sap.ui.loader.config( {
                 paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
-            } );            
+            } );
+
+            var controller = sap.ui.require('com/evosight/sacwidgets/redbull/RBUI5TreeTable');
+            debugger;
 
             //### Controller ###
             sap.ui.require([
                 "sap/base/Log",
-                "sap/ui/core/mvc/Controller",   //define as we can't require the MVC controller
+                "sap/ui/core/mvc/Controller",
                 "sap/ui/model/Sorter",
                 "sap/ui/model/json/JSONModel",
                 "sap/m/MessageToast",
