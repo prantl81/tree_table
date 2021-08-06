@@ -1,4 +1,4 @@
-sap.ui.require([
+sap.ui.define([
     "sap/base/Log",
     "sap/ui/core/mvc/Controller",   //define as we can't require the MVC controller
     "sap/ui/model/Sorter",
