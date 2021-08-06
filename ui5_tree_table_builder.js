@@ -40,7 +40,7 @@
     			}));
     		}
 
-    		set rowsVisible(newNumberRowsVisble) {
+    		set rowsVisible(newNumberRowsVisible) {
     			this._shadowRoot.getElementById("builder_rowsVisible").value = newNumberRowsVisible;
     		}
 
