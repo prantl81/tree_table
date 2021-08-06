@@ -406,7 +406,13 @@
                 paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
             } );
 
-            var controller = sap.ui.require('com/evosight/sacwidgets/redbull/RBUI5TreeTable');
+
+            sap.ui.require(['com/evosight/sacwidgets/redbull/RBUI5TreeTable'], function(RBUI5TreeTable) {
+
+                console.log("Hello world");
+                console.log(RBUI5TreeTable);
+              });
+
             debugger;
 
             //### Controller ###
