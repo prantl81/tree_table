@@ -18,7 +18,7 @@ sap.ui.require([
 
 
 
-return Controller.extend("RBUI5TreeTable", {
+return Controller.extend("com.evosight.sacwidgets.RBUI5TreeTable", {
 
                    onInit: function() {
 
