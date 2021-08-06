@@ -28,9 +28,6 @@
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
 
-            //_id = createGuid();
-            //_shadowRoot.querySelector("#oView").id = _id + "_oView";
-
 
             //-- Custom Widget - Events
 
@@ -74,8 +71,8 @@
             this._props = {};
 
 
-            //-> add loadthis here
-            loadthis(this);
+            //Initialize the UI5 component(s)
+            this.initializeUI5Component();
 
           } //constructor
 
@@ -331,20 +328,10 @@
 
 
 
-    }
-
-    // ----------------END class Ui5CustTable extends HTMLElement----------------
-
-
-    //Register custom element with tag name
-    customElements.define("rb-sac-tree-table-ui5", Ui5TreeTable);
-
-    // ---------------- UTILS -------------------------------------------------
-    function loadthis(customElement) {
-
+      initializeUI5Component() {
         let content = document.createElement('div');
         content.slot = "content";
-        customElement.appendChild(content);
+        this.appendChild(content);
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
@@ -359,11 +346,9 @@
                             ], function(RBUI5TreeTable) {
                                 //Conteroller and dependecies are available
 
-                                debugger;
-
                                 var oController = new RBUI5TreeTable();
 
-                                oController.connectWidget(customElement);
+                                oController.connectWidget(this);
 
                                 //Instantiate the view
                                 //### THE APP: place the XMLView somewhere into DOM ###
@@ -379,20 +364,24 @@
               });
 
 
+          });
 
 
-        });
+      }
+
+
+
+
     }
 
-    // ---------------- UTILS END -----------------------------------------------
+    // ----------------END class Ui5CustTable extends HTMLElement----------------
 
-    function createGuid() {
-        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
-            let r = Math.random() * 16 | 0,
-                v = c === true ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
+
+    //Register custom element with tag name
+    customElements.define("rb-sac-tree-table-ui5", Ui5TreeTable);
+
+
+
 
 
 })();
