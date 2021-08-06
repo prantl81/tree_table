@@ -28,7 +28,7 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onInit: function() {
 
-                     
+
 
                        if (this.widget._designMode) {
                            //In design mode show demo data
@@ -151,7 +151,8 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onCheckBoxSelect: function(oEvent) {
                        let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
-                       this.widget.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
+                       //this.widget.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
+                       this.widget.fireEventCheckBoxChange(checkBoxContext);
                    },
 
                    onFilter: function(oEvent){
