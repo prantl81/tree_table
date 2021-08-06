@@ -392,28 +392,17 @@
 
     // ---------------- UTILS -------------------------------------------------
     function loadthis(that) {
-        var that_ = that;
 
         let content = document.createElement('div');
         content.slot = "content";
-        that_.appendChild(content);
+        that.appendChild(content);
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
 
-            debugger;
             sap.ui.loader.config( {
                 paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
             } );
-
-
-            sap.ui.require(['com/evosight/sacwidgets/redbull/RBUI5TreeTable.controller'], function(RBUI5TreeTable) {
-
-                console.log("Hello world");
-                console.log(RBUI5TreeTable);
-              });
-
-            debugger;
 
             //### Controller ###
             sap.ui.require([
@@ -446,9 +435,6 @@
             });
 
 
-            if (that_._designMode) {
-                //oView.byId("passwordInput").setEnabled(false);
-            }
         });
     }
 
