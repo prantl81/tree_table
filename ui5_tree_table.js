@@ -31,7 +31,7 @@
 
             //-- Custom Widget - Events
 
-            this.addEventListener("onCheckBoxChange_UI5_event", event => {
+          /*  this.addEventListener("onCheckBoxChange_UI5_event", event => {
                 let detail = event.detail.checkBoxContext;
                 let returnValue = "";
 
@@ -41,9 +41,9 @@
             //inform the widget that the version button was pressed, in SAC we can then read the property rowDetails
             this.dispatchEvent(new Event("onCheckBoxChange", { }));
 
-           });
+          });*/
 
-
+/*
            this.addEventListener("click", event => {
                  console.log('click');
                  let  TreeTable = window.globVar_UI5_Table
@@ -59,13 +59,13 @@
                      this.dispatchEvent(new Event("onSelectionChange", { }));
                  }
              });
-
-             this.addEventListener("handleVisibleRowChange", event => {
+*/
+          /*   this.addEventListener("handleVisibleRowChange", event => {
 
                  //let  TreeTable = this.byId('TreeTable');
                  //TreeTable.setVisibleRowCount(parseInt(this.$rowsVisible));
             });
-
+*/
 
             //empty properties
             this._props = {};
@@ -76,6 +76,14 @@
 
           } //constructor
 
+          fireEventCheckBoxChange(selectionDetails) {
+              console.log("Event fire: CheckBoxChange");
+              console.log(selectionDetails);
+              //Store the rowDetails
+              this._props.checkBoxChanged = selectionDetails;
+              //Dispatch event towards SAC
+              this.dispatchEvent(new Event("onCheckBoxChange", { }));
+          }
 
 
 
@@ -95,18 +103,13 @@
 
           // executed after the properties of the custom widget have been updated.
           onCustomWidgetAfterUpdate(changedProperties) {
-              if ("rowsVisible" in changedProperties) {
-                this.$rowsVisible = changedProperties["rowsVisible"];
-                  //Event to handle
-                  this.dispatchEvent(new Event("handleVisibleRowChange", { }));
-              }
+            if ("rowsVisible" in changedProperties) {
+              this.$rowsVisible = changedProperties["rowsVisible"];
+                //Event to handle
+                this.dispatchEvent(new Event("handleVisibleRowChange", { }));
+            }
 
 
-              //loadthis(this);
-
-			        //this.render(20);
-
-              //window.globVar_UI5_Table.visibleRowCount=11;
 
           }
 
@@ -364,7 +367,7 @@
               }.bind(this) );
 
 
-          }.bind(this) 
+          }.bind(this)
         );
 
 
