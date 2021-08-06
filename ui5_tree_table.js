@@ -414,7 +414,9 @@
 
                                 debugger;
 
-                                var oController = new RBUI5TreeTable(customElement);
+                                var oController = new RBUI5TreeTable();
+                                
+                                oController.connectWidget(customElement);
 
                                 //Instantiate the view
                                 //### THE APP: place the XMLView somewhere into DOM ###

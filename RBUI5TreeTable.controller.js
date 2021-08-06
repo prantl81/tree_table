@@ -20,14 +20,17 @@ sap.ui.define([
 
 return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
-                   constructur(customElement) {
-                     this.customElement = customElement;
-                     alert('Hey');
+                   connectWidget: function(widget) {
+                     this.widget = widget;
+
+                     debugger;
                    },
 
                    onInit: function() {
 
-                       if (that_._designMode) {
+                     debugger;
+
+                       if (this.widget._designMode) {
                            //In design mode show demo data
                            var oData =
                              { "spl": [
@@ -112,12 +115,12 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onButtonPress: function(oEvent) {
                        // _password = oView.byId("passwordInput").getValue();
-                       that._firePropertiesChanged();
+                       this.widget._firePropertiesChanged();
 
                        this.settings = {};
                        this.settings.rowDetails = "";
 
-                       that.dispatchEvent(new CustomEvent("onStart", {
+                       this.widget.dispatchEvent(new CustomEvent("onStart", {
                            detail: {
                                settings: this.settings
                            }
@@ -148,7 +151,7 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onCheckBoxSelect: function(oEvent) {
                        let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
-                       that.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
+                       this.widget.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
                    },
 
                    onFilter: function(oEvent){
