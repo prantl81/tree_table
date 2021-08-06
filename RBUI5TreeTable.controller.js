@@ -22,11 +22,8 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onInit: function() {
 
-                     if (that._firstConnection === 0) {
-                         that._firstConnection = 1;
-                     } else {
-
                        if (that_._designMode) {
+                           //In design mode show demo data
                            var oData =
                              { "spl": [
                                      {"name":"Level One - 1", "spl": [
@@ -62,16 +59,15 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                                      ]}
                            ]};
                         } else {
-                        // not design mode -> we do not pass example data
-                       var oData = {
-                          "spl": []};
+                            // not design mode -> we do not pass example data
+                            var oData = { "spl": []};
                         }
 
 
-                           var oModel = new JSONModel(oData);
-                           this.getView().setModel(oModel);
+                        var oModel = new JSONModel(oData);
+                        this.getView().setModel(oModel);
 
-                      }
+
 
                    },
 

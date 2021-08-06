@@ -404,43 +404,24 @@
                 paths: { 'com/evosight/sacwidgets/redbull': 'https://prantl81.github.io/ui5_tree_table/' }
             } );
 
-            sap.ui.require(['com/evosight/sacwidgets/redbull/RBUI5TreeTable.controller'], function(RBUI5TreeTable) {
+            //Require the controller class and all other dependencies
+            sap.ui.require([
+                              'com/evosight/sacwidgets/redbull/RBUI5TreeTable.controller'
+                            ], function(RBUI5TreeTable) {
+                                //Conteroller and dependecies are available
 
-                console.log("Hello world");
-                console.log(RBUI5TreeTable);
+                                //Instantiate and place the view
+                                //### THE APP: place the XMLView somewhere into DOM ###
+                                var oView  = sap.ui.xmlview({
+                                    viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
+                                });
+
+                                oView.placeAt(content);
+
+
               });
 
-            debugger;
 
-            //### Controller ###
-            sap.ui.require([
-                "sap/base/Log",
-                "sap/ui/core/mvc/Controller",
-                "sap/ui/model/Sorter",
-                "sap/ui/model/json/JSONModel",
-                "sap/m/MessageToast",
-                "sap/ui/core/format/DateFormat",
-                "sap/m/ToolbarSpacer",
-                "sap/ui/table/library",
-                "sap/ui/thirdparty/jquery",
-                "sap/ui/model/Filter",
-	              "sap/ui/model/FilterOperator",
-                "sap/ui/model/FilterType",
-                "sap/ui/core/Element"
-             ], function(Log, Controller, Sorter, JSONModel, MessageToast, DateFormat, ToolbarSpacer, library, jQuery, Filter, FilterOperator, FilterType, Element) {
-                "use strict";
-
-                //Define and instantiate controller
-
-
-               //Instantiate and place the view
-               //### THE APP: place the XMLView somewhere into DOM ###
-               var oView  = sap.ui.xmlview({
-                   viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
-               });
-               oView.placeAt(content);
-
-            });
 
 
         });
