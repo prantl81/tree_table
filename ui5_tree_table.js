@@ -213,26 +213,47 @@
 
           var lh4NewRow = NewRow.l2;   //-> Second Level, LH4
           var lh4NewRowID = NewRow.l2Id;   //-> Second Level, LH4
-          var lh4Flag =  NewRow.l2Flag;
+          var lh4AFlag =  NewRow.l2Flag_a;
+          var lh4BFlag =  NewRow.l2Flag_b;
 
           var mplNewRow = NewRow.l3;   //-> MPL, details
           var mplNewRowID = NewRow.l3Id;   //-> MPL, details
-          var splFlagNewRow = NewRow.flag;   //-> SPL flag (X = true/ "" = false)
+          if ( mplNewRowID === "802340") { debugger; };
+          var splAFlagNewRow = NewRow.flag_a;   //-> SPL flag (X = true/ "" = false)
+          var splBFlagNewRow = NewRow.flag_b;   //-> SPL flag (X = true/ "" = false)
 
-          var lh4FlagBoolean = true;
-          if ( lh4Flag === "X" ) {
-             lh4FlagBoolean = true;
-          } else {
-             lh4FlagBoolean = false;
-          }
+          var lh4AEnabled = NewRow.l2Flag_a_enabled;
+          var lh4BEnabled = NewRow.l2Flag_b_enabled;
+
+          var lh4AFlagEnabled = true;
+          if ( lh4AEnabled !== "X" ) { lh4AFlagEnabled = false; }
+
+          var lh4BFlagEnabled = true;
+          if ( lh4BEnabled !== "X" ) { lh4BFlagEnabled = false; }
+
+          var lh4AFlagBoolean = true;
+          if ( lh4AFlag !== "X" ) { lh4AFlagBoolean = false; }
+
+          var lh4BFlagBoolean = true;
+          if ( lh4BFlag !== "X" ) { lh4BFlagBoolean = false; }
+
+
+
 
 
           //Map SPL Flag X to true or empty to false
-          var splFlagBoolean = true;
-          if ( splFlagNewRow === "X" ) {
-             splFlagBoolean = true;
+          var splAFlagBoolean = true;
+          if ( splAFlagNewRow === "X" ) {
+            splAFlagBoolean = true;
           } else {
-             splFlagBoolean = false;
+            splAFlagBoolean = false;
+          }
+
+          var splBFlagBoolean = true;
+          if ( splBFlagNewRow === "X" ) {
+            splBFlagBoolean = true;
+          } else {
+            splBFlagBoolean = false;
           }
 
           var oTreeTable = window.globVar_UI5_Table;
@@ -254,28 +275,34 @@
 
               if ( lh4_index !== -1) {
                 var lh4_array = tableData[channel_index].spl[lh4_index].spl;
+                //existing LH4 -> only update flag
+                  tableData[channel_index].spl[lh4_index].spl_flag_a    = lh4AFlagBoolean
+                  tableData[channel_index].spl[lh4_index].spl_flag_b    = lh4BFlagBoolean;
+                  tableData[channel_index].spl[lh4_index].flagEnabled_a = lh4AFlagEnabled;
+                  tableData[channel_index].spl[lh4_index].flagEnabled_b = lh4BFlagEnabled;
                 var mpl_index = lh4_array.findIndex(function (line) {
                   return line.name === mplNewRow;
                 });
                 if ( mpl_index !== -1) {
                   //existing MPL -> only update flag
-                  tableData[channel_index].spl[lh4_index].spl[mpl_index].spl_flag = splFlagBoolean;
+                  tableData[channel_index].spl[lh4_index].spl[mpl_index].spl_flag_a = splAFlagBoolean;
+                  tableData[channel_index].spl[lh4_index].spl[mpl_index].spl_flag_b = splBFlagBoolean;
                 } else {
                   //new MPL push into existing LH4
-                  let mpl = {"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean };
+                  let mpl = {"name": mplNewRow, "id": mplNewRowID, "flagEnabled_a": true, "flagEnabled_b": true, "spl_flag_a": splAFlagBoolean, "spl_flag_b": splBFlagBoolean };
                   tableData[channel_index].spl[lh4_index].spl.push(mpl);
                 }
 
               } else {
                 // new LH4 node added to existing channel
-                let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled": true, "spl_flag": lh4FlagBoolean, "spl": mpl};
+                let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled_a": true, "flagEnabled_b": true, "spl_flag_a": splAFlagBoolean, "spl_flag_b": splBFlagBoolean }];
+                let lh4 = {"name": lh4NewRow, "id": lh4NewRowID,  "flagEnabled_a": lh4AFlagEnabled, "flagEnabled_b": lh4BFlagEnabled, "spl_flag_a": lh4AFlagBoolean, "spl_flag_b": lh4BFlagBoolean,"spl": mpl};
                 tableData[channel_index].spl.push(lh4);
               }
           } else {
             // new top node -> create all three levels
-            let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled": true, "spl_flag": splFlagBoolean }];
-            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled": true, "spl_flag": lh4FlagBoolean, "spl": mpl}];
+            let mpl = [{"name": mplNewRow, "id": mplNewRowID, "flagEnabled_a": true, "flagEnabled_b": true, "spl_flag_a": splAFlagBoolean, "spl_flag_b": splBFlagBoolean }];
+            let lh4 = [{"name": lh4NewRow, "id": lh4NewRowID, "flagEnabled_a": lh4AFlagEnabled, "flagEnabled_b": lh4BFlagEnabled, "spl_flag_a": lh4AFlagBoolean, "spl_flag_b": lh4BFlagBoolean,"spl": mpl}];
             let channel = {"name": channelNewRow, "id": channelNewRowID, "flagEnabled": false, "spl": lh4};
             tableData.push(channel);
           }

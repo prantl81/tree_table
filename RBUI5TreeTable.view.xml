@@ -5,7 +5,7 @@
          <TreeTable id="TreeTable" rows="{/spl}" selectionMode="None" visibleRowCount="{/visibleRowCount}" enableSelectAll="false" ariaLabelledBy="title" filter="onfilter">
              <extension>
                 <m:OverflowToolbar style="Clear">
-                   <m:SearchField id="searchField" width="30%" placeholder="Search" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}">
+                   <m:SearchField id="searchField" width="30%" placeholder="Search" search="onSearch" suggest="onSuggest" suggestionItems="{path: '/spl'}" liveChange=".onLiveChange">
                       <m:SuggestionItem text="{name}" description="{name}" key="{name}" />
                    </m:SearchField>
                    <m:ToolbarSpacer />
@@ -35,13 +35,13 @@
                 <Column  hAlign="Center">
                     <m:Label text="SPL A" />
                     <template>
-                        <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
+                        <m:CheckBox selected="{spl_flag_a}" enabled="{flagEnabled_a}" select="onCheckBoxSelect"/>
                     </template>
                 </Column>
                 <Column  hAlign="Center">
                     <m:Label text="SPL B" />
                     <template>
-                        <m:CheckBox selected="{spl_flag}" enabled="{flagEnabled}" select="onCheckBoxSelect"/>
+                        <m:CheckBox selected="{spl_flag_b}" enabled="{flagEnabled_b}" select="onCheckBoxSelect"/>
                     </template>
                 </Column>
              </columns>

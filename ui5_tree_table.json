@@ -31,7 +31,7 @@
       "description": "For internal use",
       "default": ""
     },
-		"rowsVisible": {
+	"rowsVisible": {
       "type": "integer",
       "description": "number of visible rows",
       "default": 10
@@ -46,14 +46,24 @@
 					"description": "JSON String holding the data of the new record"}
 			]
 		},
-   "removeAllRows": {
-		 "description": "Removes all Rows from the table",
-		 "returnType" : "string"
+   		"removeAllRows": {
+			"description": "Removes all Rows from the table",
+		 	"returnType" : "string"
 	 },
 		"getCheckBoxRow": {
 			"returnType": "Object<string>",
 			"description": "Returns the property rowDetails"
+		},
+		"setVisibleRowCount": {
+			"description": "Sets the rows shown in the tree table",
+			"parameters":
+			[{ "name" : "rowsVisible",
+					"type": "integer",
+					"description": "Number of rows shown in the tree table."}
+			],
+			"body": "this.rowsVisible = rowsVisible;"
 		}
+
   },
   "events": {
   	"onStart": {

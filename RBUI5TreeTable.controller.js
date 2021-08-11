@@ -36,33 +36,33 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                              { "spl": [
                                      {"name":"Level One - 1", "spl": [
                                          {"name": "Level Two - 1", "spl": [
-                                           {"name": "Level Three - 1", "spl_flag": "X "},
-                                           {"name": "Level Three - 2", "spl_flag": ""  },
-                                           {"name": "Level Three - 3", "spl_flag": "X" }
+                                           {"name": "Level Three - 1", "spl_flag_a": "X", "spl_flag_b": ""},
+                                           {"name": "Level Three - 2", "spl_flag_a": "" , "spl_flag_b": ""},
+                                           {"name": "Level Three - 3", "spl_flag_a": "X" ,"spl_flag_b": ""}
                                          ]},
                                          {"name": "Level Two - 2", "spl": [
-                                           {"name": "Level Three - 4", "spl_flag": ""  },
-                                           {"name": "Level Three - 5", "spl_flag": "X" }
+                                           {"name": "Level Three - 4", "spl_flag_a": "" , "spl_flag_b": ""},
+                                           {"name": "Level Three - 5", "spl_flag_a": "X" ,"spl_flag_b": ""}
                                          ]},
                                          {"name": "Level Two - 3", "spl": [
-                                           {"name": "Level Three - 6", "spl_flag": "X" },
-                                           {"name": "Level Three - 7", "spl_flag": "X" },
-                                           {"name": "Level Three - 8", "spl_flag": "" },
-                                           {"name": "Level Three - 9", "spl_flag": "" }
+                                           {"name": "Level Three - 6", "spl_flag_a": "X" , "spl_flag_b": ""},
+                                           {"name": "Level Three - 7", "spl_flag_a": "X" , "spl_flag_b": ""},
+                                           {"name": "Level Three - 8", "spl_flag_a": ""  , "spl_flag_b": ""},
+                                           {"name": "Level Three - 9", "spl_flag_a": ""  , "spl_flag_b": ""}
                                          ]},
                                          {"name": "Level Two - 4", "spl": [
-                                           {"name": "Level Three - 10", "spl_flag": "" },
-                                           {"name": "Level Three - 11", "spl_flag": "" }
+                                           {"name": "Level Three - 10", "spl_flag_a": "" , "spl_flag_b": ""},
+                                           {"name": "Level Three - 11", "spl_flag_a": "" , "spl_flag_b": ""}
                                          ]}
                                      ]},
                                      {"name":"Level One - 2", "spl": [
                                        {"name": "Level Two - 5", "spl": [
-                                            {"name": "Level Three - 12", "spl_flag": "X" },
-                                            {"name": "Level Three - 13", "spl_flag": "X" }
+                                            {"name": "Level Three - 12", "spl_flag_a": "X" , "spl_flag_b": ""},
+                                            {"name": "Level Three - 13", "spl_flag_a": "X" , "spl_flag_b": ""}
                                          ]},
                                          {"name": "Level Two - 6", "spl": [
-                                           {"name": "Level Three - 14", "spl_flag": "X" },
-                                           {"name": "Level Three - 15", "spl_flag": "X" }
+                                           {"name": "Level Three - 14", "spl_flag_a": "X" , "spl_flag_b": ""},
+                                           {"name": "Level Three - 15", "spl_flag_a": "X" , "spl_flag_b": ""}
                                          ]}
                                      ]}
                            ]};
@@ -111,11 +111,18 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                              oSource.suggest();
                              });
 
-                            },
+                  },
 
+                  onLiveChange: function (oEvent) {
+                              var oView = this.getView(),
+                              sValue = oView.byId("searchField").getValue(),
+                              oFilter = new Filter("name", FilterOperator.Contains, sValue);
+                              var oTreeTable = this.byId("TreeTable");
+                              oTreeTable.getBinding("rows").filter(oFilter, FilterType.Application);
+                              oTreeTable.getBinding("rows").expandToLevel(3);
+                  },
 
-                   onButtonPress: function(oEvent) {
-                       // _password = oView.byId("passwordInput").getValue();
+                  onButtonPress: function(oEvent) {
                        this.widget._firePropertiesChanged();
 
                        this.settings = {};
@@ -126,7 +133,7 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                                settings: this.settings
                            }
                        }));
-                   },
+                  },
 
                   handleVisibleRowChange: function(oEvent) {
 
@@ -156,7 +163,6 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onCheckBoxSelect: function(oEvent) {
                        let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
-                       //this.widget.dispatchEvent(new CustomEvent("onCheckBoxChange_UI5_event", { detail: { checkBoxContext } } ));
                        this.widget.fireEventCheckBoxChange(checkBoxContext);
                    },
 
