@@ -40,7 +40,7 @@
 
           } //constructor
 
-          fireEventCheckBoxChange(selectionDetails) {
+          fireEventCheckBoxChange(selectionDetails, parameter) {
               console.log("Event fire: CheckBoxChange");
               console.log(selectionDetails);
               //Store the rowDetails

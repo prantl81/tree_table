@@ -28,8 +28,6 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
 
                    onInit: function() {
 
-
-
                        if (this.widget._designMode) {
                            //In design mode show demo data
                            var oData =
@@ -134,11 +132,6 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                            }
                        }));
                   },
-
-                  handleVisibleRowChange: function(oEvent) {
-
-                   },
-
                    onCollapseLevelChange: function(oEvent) {
                       var level = oEvent.mParameters.item.mProperties.text;
                       var oTreeTable = this.byId("TreeTable");
@@ -154,16 +147,15 @@ return Controller.extend("com.evosight.sacwidgets.redbull.RBUI5TreeTable", {
                                                   oTreeTable.expandToLevel(2);
                                                   break;
                                         }
-
                    },
 
                    setVisibleRowCount(newRowCount) {
                       this.getView().getModel().setProperty("/visibleRowCount", newRowCount);
                    },
 
-                   onCheckBoxSelect: function(oEvent) {
+                   onCheckBoxSelect: function(oEvent, parameter) {
                        let checkBoxContext = oEvent.getSource().getBindingContext().getObject();
-                       this.widget.fireEventCheckBoxChange(checkBoxContext);
+                       this.widget.fireEventCheckBoxChange(checkBoxContext, parameter);
                    },
 
                    onFilter: function(oEvent){

@@ -35,13 +35,13 @@
                 <Column  hAlign="Center">
                     <m:Label text="SPL A" />
                     <template>
-                        <m:CheckBox selected="{spl_flag_a}" enabled="{flagEnabled_a}" select="onCheckBoxSelect"/>
+                        <m:CheckBox selected="{spl_flag_a}" enabled="{flagEnabled_a}" select="onCheckBoxSelect($event, 'A')"/>
                     </template>
                 </Column>
                 <Column  hAlign="Center">
                     <m:Label text="SPL B" />
                     <template>
-                        <m:CheckBox selected="{spl_flag_b}" enabled="{flagEnabled_b}" select="onCheckBoxSelect"/>
+                        <m:CheckBox selected="{spl_flag_b}" enabled="{flagEnabled_b}" select="onCheckBoxSelect($event, 'B')"/>
                     </template>
                 </Column>
              </columns>
