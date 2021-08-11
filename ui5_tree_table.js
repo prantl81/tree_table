@@ -45,6 +45,7 @@
               console.log(selectionDetails);
               //Store the rowDetails
               this.selectionState.checkBoxChanged = selectionDetails;
+              this.selectionState.checkBoxColumn = parameter;
               //Dispatch event towards SAC
               this.dispatchEvent(new Event("onCheckBoxChange", { }));
           }
@@ -312,7 +313,6 @@
 
         //SAC method
         removeAllRows(){
-
           var TreeTable = window.globVar_UI5_Table;
           var oModel = TreeTable.getModel();
           oModel.oData = {spl: []};
@@ -326,6 +326,12 @@
       getCheckBoxRow(){
         let checkBoxChangedObject = this.selectionState.checkBoxChanged;
         return checkBoxChangedObject ;
+      }
+
+      //SAC method
+      getCheckBoxChanged(){
+        let checkBoxChanged = this.selectionState.checkBoxColumn;
+        return checkBoxChanged ;
       }
 
 

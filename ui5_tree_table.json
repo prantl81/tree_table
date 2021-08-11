@@ -57,6 +57,10 @@
 		"description": "Returns the last changed row and possible childs",
 		"returnType": "Object<string>"
 	},
+	"getCheckBoxChanged": {
+		"description": "Returns the last changed CheckBox -> A or B",
+		"returnType": "string"
+	},
 	"setVisibleRowCount": {
 		"description": "Set the rows shown in the tree table",
 		"parameters":
