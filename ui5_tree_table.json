@@ -1,6 +1,6 @@
 {
 	"id": "rb.sac.tree.table.ui5",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"name": "cpmSplMaintenance",
 	"description": "CPM SPL Maintenance",
 	"newInstancePrefix": "cpmSplMaintenance",
