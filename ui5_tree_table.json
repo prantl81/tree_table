@@ -4,76 +4,76 @@
 	"name": "cpmSplMaintenance",
 	"description": "CPM SPL Maintenance",
 	"newInstancePrefix": "cpmSplMaintenance",
-	"icon": "https://prantl81.github.io/ui5_tree_table/icon.png",
+	"icon": "https://127.0.0.1:8080/icon.png",
 	"vendor": "none",
 	"eula": "",
 	"license": "",
 	"imports": [""],
-	  "webcomponents": [
+
+"webcomponents": [
     {
-      "kind": "main",
-      "tag": "rb-sac-tree-table-ui5",
-      "url": "https://127.0.0.1:8080/ui5_tree_table.js",
-      "integrity": "",
-      "ignoreIntegrity": true
+    	"kind": "main",
+      	"tag": "rb-sac-tree-table-ui5",
+      	"url": "https://127.0.0.1:8080/ui5_tree_table.js",
+      	"integrity": "",
+      	"ignoreIntegrity": true
     },
-		{
-			"kind": "builder",
-			"tag": "rb-sac-tree-table-ui5-builder",
-			"url": "https://127.0.0.1:8080/ui5_tree_table_builder.js",
-			"integrity": "",
-			"ignoreIntegrity": true
-		}
+	{
+		"kind": "builder",
+		"tag": "rb-sac-tree-table-ui5-builder",
+		"url": "https://127.0.0.1:8080/ui5_tree_table_builder.js",
+		"integrity": "",
+		"ignoreIntegrity": true
+	}
   ],
-  "properties": {
+
+"properties": {
     "metadata": {
-      "type": "string",
-      "description": "For internal use",
-      "default": ""
+    	"description": "For internal use",
+		"type": "string",
+      	"default": ""
     },
 	"rowsVisible": {
-      "type": "integer",
-      "description": "number of visible rows",
-      "default": 10
-    }
-  },
-  "methods": {
-		"addRow": {
-			"description": "Add a new row to the table",
-			"parameters":
+    	"description": "number of visible rows",
+		"type": "integer",  
+      	"default": 10
+}
+},
+
+"methods": {
+	"addRow": {
+		"description": "Add a new row to the table",
+		"parameters":
 			[{ "name" : "NewRow",
 					"type": "Object<string>",
 					"description": "JSON String holding the data of the new record"}
 			]
 		},
-   		"removeAllRows": {
-			"description": "Removes all Rows from the table",
-		 	"returnType" : "string"
+   	"removeAllRows": {
+		"description": "Removes all Rows from the table",
+	 	"returnType" : "string"
 	 },
-		"getCheckBoxRow": {
-			"returnType": "Object<string>",
-			"description": "Returns the property rowDetails"
-		},
-		"setVisibleRowCount": {
-			"description": "Sets the rows shown in the tree table",
-			"parameters":
+	"getCheckBoxRow": {
+		"description": "Returns the last changed row and possible childs",
+		"returnType": "Object<string>"
+	},
+	"setVisibleRowCount": {
+		"description": "Set the rows shown in the tree table",
+		"parameters":
 			[{ "name" : "rowsVisible",
 					"type": "integer",
 					"description": "Number of rows shown in the tree table."}
 			],
-			"body": "this.rowsVisible = rowsVisible;"
-		}
+		"body": "this.rowsVisible = rowsVisible;"
+	}
+ },
 
-  },
-  "events": {
+"events": {
   	"onStart": {
       "description": "onStart events trigger"
     },
-		"onCheckBoxChange": {
-			"description": "check box changed"
-		},
-		"onSelectionChange": {
-			"description": "Selection Changed"
-		}
-  }
+	"onCheckBoxChange": {
+		"description": "CheckBox changed"
+	}
+}
 }
